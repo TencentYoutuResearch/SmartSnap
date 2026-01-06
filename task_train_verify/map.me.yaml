@@ -1,0 +1,379 @@
+APP: map.me
+package: com.mapswithme.maps.pro
+tasks:
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Find the nearest parking lot.
+  task_id: map.me_0
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Display the route to the nearest beach.
+  task_id: map.me_1
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Navigate to the nearest supermarket.
+  task_id: map.me_2
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Find the nearest bank.
+  task_id: map.me_3
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Find the closest gas station.
+  task_id: map.me_4
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Show all coffee shops in the area on the map. Use MAPS.ME App.
+  task_id: map.me_5
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Tell me how long it takes to drive from here to Changsha Huanghua International. Use MAPS.ME App.
+    Airport.
+  task_id: map.me_6
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Show the bike route to the 西湖公园. Use MAPS.ME App.
+  task_id: map.me_7
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Search for a nearest sexytea and add it to my favorite. Use MAPS.ME App.
+  task_id: map.me_8
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Find the nearest pharmacy. Use MAPS.ME App.
+  task_id: map.me_9
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Display the walking route to the nearest park. Use MAPS.ME App.
+  task_id: map.me_10
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Display the walking route to the nearest gym. Use MAPS.ME App.
+  task_id: map.me_11
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Show public transport routes to the 湘雅医院. Use MAPS.ME App.
+  task_id: map.me_12
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Show me the nearest restaurant. Use MAPS.ME App.
+  task_id: map.me_13
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Show the route to the nearest hospital. Use MAPS.ME App.
+  task_id: map.me_14
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Find out which dining establishments are closest to you at MAPS.ME and see
+    how long it takes to bike there.
+  task_id: map.me_15
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME to find Haidian Park and see how far it is.
+  task_id: map.me_16
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Check how long it takes to drive a car to the Summer Palace and how far it
+    will take on MAPS.ME.
+  task_id: map.me_17
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Find out which 3 dining establishments are closest to you at MAPS.ME and bookmark
+    them.
+  task_id: map.me_18
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Check the distance to Olympic Forest Park on MAPS.ME.
+  task_id: map.me_19
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Find the nearest bakery in MAPS.ME and add it to your "Delicious" favorites.
+  task_id: map.me_20
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Start a hiking navigation from your location to the nearest Park in MAPS.ME.
+  task_id: map.me_21
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Add some local attractions on MAPS.ME to your collection for convenient travel.
+  task_id: map.me_22
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Please let me know the name of the hotel closest to the current location that
+    can accommodate two adults and one child.
+  task_id: map.me_23
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Create a scenic driving route through the Ancient Lotus Garden on MAPS.ME.
+  task_id: map.me_24
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to View my bookmark and categorizing my places by type, using MAPS.ME.
+  task_id: map.me_25
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to find the nearest gas station and bookmark the location for next
+    time.
+  task_id: map.me_26
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Locate all restaurants within a 20km radius of your current location using
+    MAPS.ME and save them for future reference.
+  task_id: map.me_27
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Customize the MAPS.ME map style for better visibility during night-time driving.
+  task_id: map.me_28
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to start a public transportation navigation to the nearest national
+    park.
+  task_id: map.me_29
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to navigate to Olympic Forest Park with estimated arrival times.
+  task_id: map.me_30
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME to check how far it takes to ride to Beihai Park.
+  task_id: map.me_31
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Check the walking distance and time to the nearest park from your location
+    using MAPS.ME.
+  task_id: map.me_32
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Create a neighborhood emergency plan on MAPS.ME App with route to the nearest hospitals.
+  task_id: map.me_33
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Find the nearest two national parks and add them into my bookmark.
+  task_id: map.me_34
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME App to Check how far and how long it takes to drive to the Palace Museum on MAPS.ME.
+  task_id: map.me_35
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Bookmark each restaurant you eat at over the next month on MAPS.ME to create
+    a personalized dining guide.
+  task_id: map.me_36
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Utilize MAPS.ME to find how long it will take me if I drive from my location
+    to Happy Valley.
+  task_id: map.me_37
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to plan a route to Xizhimen Station.
+  task_id: map.me_38
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to navigate public transportation from my location to Zhongguancun.
+  task_id: map.me_39
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Research and bookmark three child-friendly attractions such as theme parks,
+    museums, and parks in your city using MAPS.ME.
+  task_id: map.me_40
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Check and record the route to the nearest bar on MAPS.ME and tell me how far
+    it takes to walk.
+  task_id: map.me_41
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME's search function to find a bike route to the nearest restaurant.
+  task_id: map.me_42
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Search for navigation and drive to the nearest art museum on MAPS.ME.
+  task_id: map.me_43
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME to find the nearest hotel which has a score and tell me how many
+    reviews it has.
+  task_id: map.me_44
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Search for and navigate to the nearest coffee shop using MAPS.ME.
+  task_id: map.me_45
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Check how far the nearest bus stop is and how long it takes to walk there. You need to use MAPS.ME.
+  task_id: map.me_46
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Find the best viewpoints on MAPS.ME for sunset watching using MAPS.ME and plan a romantic
+    evening route.
+  task_id: map.me_47
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to locate the nearest sight in your city and plan a hiking route
+    to reach it.
+  task_id: map.me_48
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Plan a bike tour around your city using MAPS.ME, marking each point of interest
+    you want to visit along the way.
+  task_id: map.me_49
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to see driving directions to the nearest marketplace.
+  task_id: map.me_50
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Utilize MAPS.ME to find the driving  distance from your location to Window
+    of the World.
+  task_id: map.me_51
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Locate the nearest public parks through MAPS.ME and create an urban nature
+    walk route connecting them.
+  task_id: map.me_52
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Open my landmarks and find Xiaomeisha and start a biking navigation to there
+    in MAPS.ME.
+  task_id: map.me_53
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to find the nearest bank and plan driving directions.
+  task_id: map.me_54
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Search for a popular tourist attraction in your city on MAPS.ME.
+  task_id: map.me_55
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Check the MAPS.ME and navigate to the nearest coffee shop and walk to it, tell me how
+    long and how far it will take.
+  task_id: map.me_56
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Use MAPS.ME to compare the time using alternative transportation options, such
+    as public transit and biking routes, for your commute to work.
+  task_id: map.me_57
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Check how far it takes to ride a bike to Peking University on MAPS.ME.
+  task_id: map.me_58
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Plan a bike tour around Baoding using MAPS.ME and set departure and destination
+    points as well as passing points.
+  task_id: map.me_59
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Search and bookmark the closest vegetarian restaurant on MAPS.ME.
+  task_id: map.me_60
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Find a river nearest to your place with MAPS.ME.
+  task_id: map.me_61
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Find and bookmark the nearest coffee shop in your city on MAPS.ME for a weekend
+    coffee crawl.
+  task_id: map.me_62
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Find a ethnic restaurant in Tokyo you are visiting using MAPS.ME.
+  task_id: map.me_63
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Using MAPS.ME, find the nearest shopping mall and start a car navigation to
+    there.
+  task_id: map.me_64
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Search and mark a popular art museum in your city on the MAPS.ME App.
+  task_id: map.me_65
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME to collet a hotel in your city.
+  task_id: map.me_66
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Add the nearest park to my bookmarks, with MAPS.ME.
+  task_id: map.me_67
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Customize the MAPS.ME map style for better visibility during night-time driving.
+  task_id: map.me_68
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Collect a nearby cafe on the MAPS.ME.
+  task_id: map.me_69
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Find out which dining establishments are closest to you at MAPS.ME and see
+    how long it takes to bike there.
+  task_id: map.me_70
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Can you find if there are any restaurants within a 5 km radius of your current
+    location using MAPS.ME? If you can find, please help me start a car navigation
+    to there.
+  task_id: map.me_71
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Start a hiking navigation from your location to Pingshan Park in MAPS.ME.
+  task_id: map.me_72
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Download the map of Paris for offline use in MAPS.ME before your trip to France.
+  task_id: map.me_73
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Mark and save a restaurant near your situation on MAPS.ME.
+  task_id: map.me_74
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Find and bookmark the nearest sushi restaurant to your location using MAPS.ME.
+  task_id: map.me_75
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Start public transportation navigating with MAPS.ME to the nearest national
+    park.
+  task_id: map.me_76
+- metric_func: evaluation.tasks.map_me
+  metric_type: query_detect
+  task: Compare the straight-line distance and the driving distance from my location
+    to Dameisha Beach, use MAPS.ME APP.
+  task_id: map.me_77
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Download the offline map of Tokyo, Japan on MAPS.ME for future travel.
+  task_id: map.me_78
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Found the nearest bar to your location on MAPS.ME application and add it into your bookmarks.
+  task_id: map.me_79
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Find out which groceries are closest to you at MAPS.ME and bookmark them.
+  task_id: map.me_80
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Find out which hostel is closest to you at MAPS.ME and bookmark it.
+  task_id: map.me_81
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Open my bookmark on MAPS.ME, and add my nearest place's description which is the relaxing
+    station on my weekly jogging.
+  task_id: map.me_82
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Start a bike navigation to Window of the World in Shenzhen using MAPS.ME.
+  task_id: map.me_83
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Organize a food tour, marking two nearest restaurants on MAPS.ME.
+  task_id: map.me_84
+- metric_func: evaluation.tasks.map_me
+  metric_type: operation
+  task: Use MAPS.ME App to Find out which 3 dining establishments are closest to you at MAPS.ME and bookmark
+    them.
+  task_id: map.me_85

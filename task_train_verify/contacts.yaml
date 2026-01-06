@@ -1,0 +1,238 @@
+APP: Contacts
+package: com.google.android.contacts
+tasks:
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Create a new contact named "admin".
+  task_id: contacts_0
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Share a contact's details by text message to ABC.
+  task_id: contacts_1
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Restore contacts from backup. If there exists no backup file, export one.
+  task_id: contacts_2
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Create a new contact person named "Li" with number 12345678. Then, Merge duplicate contacts.
+  task_id: contacts_3
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Delete any one contact.
+  task_id: contacts_4
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Export contacts to local files.
+  task_id: contacts_5
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Create a contact "boss" with the number 889132 and move it to the group "co-worker".
+  task_id: contacts_6
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Backup contacts.
+  task_id: contacts_7
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Add the birthday of contact "ABC" as Mar-27-2020.
+  task_id: contacts_8
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Rename the contacts "AAA", "ABC", "Li" respectively as "Lion King", "Aladin Boboa", and "Mulan Hua". Then, Sort contacts by last name.
+  task_id: contacts_9
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Change a contact's profile picture.
+  task_id: contacts_10
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open contacts then look for the contact name "Li" then delete the
+    contact.
+  task_id: contacts_11
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: In the Google Contacts, create the contact with name 'AABBCC' and mark the company as "the thinking machine".
+  task_id: contacts_12
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: I want to search for AAA's contact number in the Google Contacts.
+  task_id: contacts_13
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Find my wife's contact in the Google Contacts; her contact is saved by the
+    name AAA.
+  task_id: contacts_14
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open Google Contacts & create the contact Test modeling with the organization "hallucination".
+  task_id: contacts_15
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Go to Google Contacts & create the contact named Violet Chen, her company as Shanghai Jiao Tong University.
+  task_id: contacts_16
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and create Sonu's contact with the number 8721-3332.
+  task_id: contacts_17
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts & create a new contact named "Demo" with the number 9999999999
+    & name it Test.
+  task_id: contacts_18
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and search for the ABC contact from the contacts
+    list.
+  task_id: contacts_19
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open Google Contacts+ app and Create a new contact for Bill Wang with the number
+    1234567890.
+  task_id: contacts_20
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and add the contact 'Sonu Monu'.
+  task_id: contacts_21
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts app and search for AAA contact from the contacts
+    list
+  task_id: contacts_22
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and edit the ABC contact to be as AABBCC.
+  task_id: contacts_23
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open Google Contacts app and Create a new contact for Professor Li with the number
+    1234567890.
+  task_id: contacts_24
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Save my colleague's number 886886 on the Google contact under the name Swati Benjamin.
+  task_id: contacts_25
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: In the Google Contacts, change the display of formats name by the last name
+    first.
+  task_id: contacts_26
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: On the Google Contacts app, edit the contact name AAA to AAA2.
+  task_id: contacts_27
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and delete the ABC contact.
+  task_id: contacts_28
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Add my Dad's contact (Li) to home screen.
+  task_id: contacts_29
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Delete the number of my friend, Li because he has changed his number. Delete
+    the number in the Google Contacts.
+  task_id: contacts_30
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: In the Google Contacts, Create the new label and name it with "Bolo Kurowo".
+  task_id: contacts_31
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: i want to block calls from unidentified callers.
+  task_id: contacts_32
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts & create the contact "Nick Wang" with the number 123 and orgnization "Peking University".
+  task_id: contacts_33
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts to add the number 0245612456 as my friend, wesley swaski contact
+    then save it.
+  task_id: contacts_34
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts App to add a new makaryo number 0987654321, the contact's
+    name, and the email address makaryokuy@gmail.com, then save it.
+  task_id: contacts_35
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open Google Contacts and Create a new contact for Sonu with the email 1234567890@qq.com.
+  task_id: contacts_36
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Go to the Google Contacts & edit the number from the Contact 'ABC' with 568127452
+    & save the contact.
+  task_id: contacts_37
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Find Li contact then add it to my favourites.
+  task_id: contacts_38
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Go to the Google Contacts & delete AAA's contact.
+  task_id: contacts_39
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts and delete the ABC contact.
+  task_id: contacts_40
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: In the Google Contacts app, view all contact lists. Then sort by phone contact.
+  task_id: contacts_41
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: I want to add a new contact number of my gardener, Paul. Create a new contact
+    and add his number 6709870545 in the Google contact.
+  task_id: contacts_42
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: By mistake, I saved a contact with the name "AAA" so delete it from my Google
+    Contacts.
+  task_id: contacts_43
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: On the Google Contacts, edit AAA's contact number with 0756781245.
+  task_id: contacts_44
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: I want to add my dad Bob's contact into the Google Contacts. His email is bobli@gmail.com
+  task_id: contacts_45
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts app and rename the ABC to XXYYZZ contact.
+  task_id: contacts_46
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Open the Google Contacts app, select all contacts, and then add them into a new group called "monsters".
+  task_id: contacts_47
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Add AAA contact into the new label Bestie.
+  task_id: contacts_48
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: I want to create a contact of my dad Gregory Van Loon  with 08721457192 as
+    his number in the Google Contacts.
+  task_id: contacts_49
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Select all the contacts that I have saved in my Google Contacts.
+  task_id: contacts_50
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: I want to add my mom Violet's email address in her contact card with Violet123@gmail.com.
+  task_id: contacts_51
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Go to the Google Contacts then add Imron's contact (number 402933-1234) to the newly created 'Bolo Kurowo' label.
+  task_id: contacts_52
+- metric_func: evaluation.tasks.contacts
+  metric_type: query_detect
+  task: Search for Contact Natalie Larson on the Google Contacts. If the contact does not exist, create one for me (email natalie.larson@outlook.com)
+  task_id: contacts_53
+- metric_func: evaluation.tasks.contacts
+  metric_type: operation
+  task: Search contact ABC, and add her contact in to "Melody" label.
+  task_id: contacts_54

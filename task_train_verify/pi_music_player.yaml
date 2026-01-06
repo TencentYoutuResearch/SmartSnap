@@ -1,0 +1,246 @@
+APP: Pi Music Player
+package: com.Project100Pi.themusicplayer
+tasks:
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Shuffle play all songs by Eason Chen.
+  task_id: 0
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play the most recent song I added to my library.
+  task_id: 1
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Open the page of the album with the most songs and play the first track.
+  task_id: 2
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play the most played song from the "Most Played" playlist.
+  task_id: 3
+- metric_func: evaluation.tasks.pimusic
+  metric_type: query_detect
+  task: Display all songs by an artist with the longest name in the "ARTISTS" list.
+  task_id: 4
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play the entire "Pi Favorite" playlist on shuffle. If there eixsts no favourite songs, add two songs from the most played list into the Pi Favorites.
+  task_id: 5
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the playlist "Gym Hits".
+  task_id: 6
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the playlist "New Discoveries".
+  task_id: 7
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Make a playlist called "Workout Hits" consisting only of songs longer than
+    2 minutes.
+  task_id: 8
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the recently added song to "Pi Favorite" playlist.
+  task_id: 9
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Move all songs from the artist "Eason Chen" to a new playlist called "Artist
+    Spotlight".
+  task_id: 10
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the most recently played song to a new playlist called "Current Favorites".
+  task_id: 11
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Go to "ARTISTS" and play all songs by Eason Chen
+  task_id: 12
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a playlist "Mellow Moods" with tracks only by Eason Chen.
+  task_id: 13
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add all songs from the album "Red" to the "Chill Vibes" playlist.
+  task_id: 14
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play all the songs from the "Recently Played" playlist in shuffle mode.
+  task_id: 15
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add all songs by Eason Chen to the "Workout Hits" playlist.
+  task_id: 16
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Rename the "Workout Jam" playlist to "New Discoveries".
+  task_id: 17
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a playlist called "Workout Songs".
+  task_id: 18
+- metric_func: evaluation.tasks.pimusic
+  metric_type: query_detect
+  task: Find the longest song in the "Recently Played" playlist.
+  task_id: 19
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Sort all tracks by duration in descending order and play the top 3.
+  task_id: 20
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Search for any song by "Eason Chen" and arrange his songs by duration in descending
+    order, then play the longest one.
+  task_id: 21
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Find the longest song within the "TRACKS" list and add it to the "Pi Favorite"
+    playlist.
+  task_id: 22
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Navigate to the "Recently Added" playlist and play the last song on the list.
+  task_id: 23
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add all songs by Pink Floyd to the "Pi Favorite" playlist.
+  task_id: 24
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a new playlist named "Workout Jams".
+  task_id: 25
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a playlist of all songs that are longer than 8 minutes called "Long
+    songs".
+  task_id: 26
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Shuffle play the "Most Played" playlist.
+  task_id: 27
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Find the last one song in the "Most Played" playlist and play it.
+  task_id: 28
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Find the longest track in my collection and play it.
+  task_id: 29
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a playlist named "Workout Hits".
+  task_id: 30
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a new playlist named "Workout Jams" and add 5 songs to it.
+  task_id: 31
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Shuffle play all the songs by the artist "Pink Floyd".
+  task_id: 32
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Sort the "TRACKS" list by artist name in ascending order and play the first
+    song on the list.
+  task_id: 33
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Shuffle play the "Recently Added" playlist.
+  task_id: 34
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Set a sleep timer to stop playing music after 30 minutes.
+  task_id: 35
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Sort my song list by duration in descending order.
+  task_id: 36
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a new playlist called "Chill Vibes" and add 5 songs to it.
+  task_id: 37
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Rename the "Workout Jams" playlist to "New Discoveries."
+  task_id: 38
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Determine which album has the highest number of songs and listen to the first
+    song of that album.
+  task_id: 39
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Randomly play a song by Eason Chen from the "ARTISTS" section.
+  task_id: 40
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play the first song from the "Recently Played" playlist.
+  task_id: 41
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the song "Future sounds" into the "Pi Favorite" playlist.
+  task_id: 42
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: How many songs are there in the "Recently added" playlist? And sort them
+    by duration.
+  task_id: 43
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Remove all songs by "Pink Floyd" from the "Recently Played" playlist.
+  task_id: 44
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play the song in "ALBUMS" starting with the letter 'F'.
+  task_id: 45
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Re-order the "most played" playlist alphabetically by song title.
+  task_id: 46
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Search for any songs that have the word "You" in the title and add them to
+    the "Pi Favourites" playlist.
+  task_id: 47
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Delete all songs by the artist "Kanye West" in the library.
+  task_id: 48
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play all the songs by Eason Chen in the list.
+  task_id: 49
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Find all songs by Eason Chen and sort them by duration in ascending order.
+  task_id: 50
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Set "Dark Side Of The Moon" as the first song in my newly added "Workout Jams" playlist.
+  task_id: 51
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Add the longest song you found to the "Pi Favorite" playlist.
+  task_id: 52
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Play all songs from the "ALBUMS" section of the artist with the second largest
+    number of songs.
+  task_id: 53
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Rename the "Chill Vibes" playlist to "Top Hits".
+  task_id: 54
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Locate the album with the fewest songs and delete it.
+  task_id: 55
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Create a playlist called "Recent songs want to listen" and add songs from
+    the "Most Played" playlist that are longer than 4 minutes.
+  task_id: 56
+- metric_func: evaluation.tasks.pimusic
+  metric_type: operation
+  task: Remove all songs by KanyeWest.
+  task_id: 57

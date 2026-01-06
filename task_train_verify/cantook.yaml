@@ -1,0 +1,357 @@
+APP: Cantook
+package: Cantook
+tasks:
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add a collection named Detective Stories.
+  task_id: cantook_0
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Look for the Books with "Picaresque literature" in their categories.
+  task_id: cantook_1
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort books by author name in order.
+  task_id: cantook_2
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort all books in the "William Shakespeare" category by the date they were created.
+  task_id: cantook_3
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Modify the name of any classification category.
+  task_id: cantook_4
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the book "Don Quixote" into a newly created "Detective Novels" collection.
+  task_id: cantook_5
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add a collection titled "Top Picks".
+  task_id: cantook_6
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the book "Hamlet" to the newly created "Mystery Novels" collection.
+  task_id: cantook_7
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection named "Sci-Fi Classics".
+  task_id: cantook_8
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Display the total number of books written by "Charles Dickens" listed in the
+    "Authors" section.
+  task_id: cantook_9
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Search for books with "Adventure" in the title and add to a newly created collection named
+    "Adventure Series".
+  task_id: cantook_10
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the second book in the "Recently add" list to the "Weekend Reads" collection.
+  task_id: cantook_11
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Rename the "Mystery Novels" collection to "Detective Novels". If there exists no "Mystery Novels" collection, then create one. 
+  task_id: cantook_12
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a collection named "Favorites" and add the top two books from my Recently
+    Read list.
+  task_id: cantook_13
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Arrange the books in the order of Expiration date.
+  task_id: cantook_14
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a collection named "Favorite Sci-Fi".
+  task_id: cantook_15
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Clear the reading progress for "Oliver Twist".
+  task_id: cantook_16
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Find all books in the "Categories" that are tagged under "Comedies".
+  task_id: cantook_17
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Find all books in the "Tragedies" category and add them to the newly added collection
+    called "Detective Stories".
+  task_id: cantook_18
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort "Authors" alphabetically and then open the first author's first book.
+  task_id: cantook_19
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Change the cover of the fourth book in "Recently read" to a different image
+    from your storage.
+  task_id: cantook_20
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add a new collection titled "June Reads".
+  task_id: cantook_21
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add "Hamlet" by William Shakespeare to the new "Sci-Fi Classics" collection.
+  task_id: cantook_22
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Mark the last book from the author with the most books  as read.
+  task_id: cantook_23
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: View which author has 3 or more books from the author list, and identify which
+    books they are.
+  task_id: cantook_24
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Change reading theme to dark mode while reading "Hamlet".
+  task_id: cantook_25
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Display the book count for each author in the Authors section.
+  task_id: cantook_26
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort books by author name in ascending order.
+  task_id: cantook_27
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the book "Oliver Twist" to the "Sci-Fi Classics" collection.
+  task_id: cantook_28
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Open the first book I have recently read and bookmark page 135.
+  task_id: cantook_29
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Show all books in the "Tragedies" category.
+  task_id: cantook_30
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Find and turn to the introduction of the book in the "Science Fiction" category.
+  task_id: cantook_31
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Remove the book "Peter Pan" from the device.
+  task_id: cantook_32
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the book "Hamlet" into the "Favorites"
+    collection.
+  task_id: cantook_33
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: add "Don Quixote" in"Recently add" to the new "American Classics" collection.
+  task_id: cantook_34
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the book "Hamlet" to "Top Picks" collection.
+  task_id: cantook_35
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the third book in "Recently read" to a new collection named "Monthly
+    Reads".
+  task_id: cantook_36
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Compile a list of all books by the author "J. M. Barrie".
+  task_id: cantook_37
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move "Oliver Twist" to the new "Classics" collection.
+  task_id: cantook_38
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Remove all books by J.M.Barrie from the device.
+  task_id: cantook_39
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection named "Science Fiction Favorites".
+  task_id: cantook_40
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort books by category.
+  task_id: cantook_41
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Sort "Books" by author name in alphabetical order.
+  task_id: cantook_42
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Locate a book in the "Historical fiction" category and tell me its title.
+  task_id: cantook_43
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Find all books by the author "Charles Dickens" and list them in date last
+    read order.
+  task_id: cantook_44
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the book "Alice's Adventures in Wonderland" to the newly created "Mystery Novels" collection.
+  task_id: cantook_45
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Search for all books by Charles Dickens.
+  task_id: cantook_46
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add all books categorized under "Science Fiction" to the new "Favorite Sci-Fi"
+    collection.
+  task_id: cantook_47
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection named "Science Fiction".
+  task_id: cantook_48
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a category named "Humor".
+  task_id: cantook_49
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the book "The Scarlet Letter" to the new "Mystery Novels" collection.
+  task_id: cantook_50
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add a new collection named "Sci-Fi Must Reads".
+  task_id: cantook_51
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection called "Weekend Reads".
+  task_id: cantook_52
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Open the books "Romeo and Juliet" and set the text size to 100%.
+  task_id: cantook_53
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Mark all books of William Shakespeare as read.
+  task_id: cantook_54
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the latest imported book to the "Favorites" collection.
+  task_id: cantook_55
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection named "Mystery Novels".
+  task_id: cantook_56
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Jump to chapter 3 in "Oliver Twist".
+  task_id: cantook_57
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Read the first chapter of one of the recently read books.
+  task_id: cantook_58
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move the first "Recently add" book to the collection named "recent add".
+  task_id: cantook_59
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Find all books in the "Science Fiction" category.
+  task_id: cantook_60
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Switch to night mode for reading "Oliver Twist".
+  task_id: cantook_61
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create a new collection named "Holiday Reads" and add the first recently read
+    book to this collection.
+  task_id: cantook_62
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Remove the book "Don Quixote" from the "Humor" category.
+  task_id: cantook_63
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Move "Don Quixote" to the Detective Stories collection.
+  task_id: cantook_64
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Browse to "Authors", find "William Shakespeare", and open the first book listed.
+  task_id: cantook_65
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Find and open the first book with the highest number of books by the same
+    author in the "Authors" section.
+  task_id: cantook_66
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Look up the second book in the "Tragedies" category.
+  task_id: cantook_67
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Open the "Recently add" section and then open the first book and tell me how
+    many pages the book has.
+  task_id: cantook_68
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Mark all books by "J. M. Barrie" from the "Authors" section as read.
+  task_id: cantook_69
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Open the category of "Science Fiction" and check how many books it has.
+  task_id: cantook_70
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Organize a new collection named "Comedy Collection" and add A Midsummer Night's
+    Dream to it.
+  task_id: cantook_71
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Change the sorting of the "Books" section to display by date,the most recent
+    reading first.
+  task_id: cantook_72
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Adjust font size to 105% while reading "Hamlet".
+  task_id: cantook_73
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Filter books in "Categories" by the tag "William Shakespeare" and read the
+    page 50 of the second book in the list.
+  task_id: cantook_74
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add a collection named "Timeless Literature".
+  task_id: cantook_75
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add "Peter Pan" to the new "Classics" collection.
+  task_id: cantook_76
+- metric_func: evaluation.tasks.cantook
+  metric_type: query_detect
+  task: Find how many books are under the category of "Fairy plays" in the "category".
+  task_id: cantook_77
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Within "My Books", scroll down and open the last book.
+  task_id: cantook_78
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Find the book "The Scarlet Letter" and open the scroll option.
+  task_id: cantook_79
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Create the collection of "Classics" first and delete it later.
+  task_id: cantook_80
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Go to "Recently add" and open page 20 of the third book in the list.
+  task_id: cantook_81
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Add the first book listed under "Categories" labeled "Science fiction" to
+    the newly created "Science Fiction Favorites" collection.
+  task_id: cantook_82
+- metric_func: evaluation.tasks.cantook
+  metric_type: operation
+  task: Open the last book in the "Recently added" and tell me how many pages the
+    book has.
+  task_id: cantook_83

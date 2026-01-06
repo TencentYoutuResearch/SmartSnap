@@ -1,0 +1,406 @@
+import json
+import urllib.parse
+from typing import Union
+
+from qwen_agent.tools.base import BaseTool, register_tool
+
+class Tap(BaseTool):
+    
+    name = 'tap'
+    description = 'This function is used to tap a UI element shown on the smartphone screen by simulating a tap action within the specified rectangular area defined by the coordinates (x1, y1) and (x2, y2). A simple use case is tap(462,1693,619,1870), which taps the center of the UI element, calculated to be at [540.5,1781.5].Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'x1': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the top-left corner of the rectangle.'
+            }, 
+            'y1': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the top-left corner of the rectangle.'
+            },
+            'x2': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the bottom-right corner of the rectangle.'
+            },
+            'y2': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the bottom-right corner of the rectangle.'
+            }
+        },
+        'required': ['x1', 'y1', 'x2', 'y2'],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        element = [params['x1'], params['y1'], params['x2'], params['y2']]
+        self.executor.do("Tap", element)
+        self.recorder.update_after(self.executor.current_return, f"do(action='Tap', element={element})")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class Type(BaseTool):
+    
+    name = 'type'
+    description = 'This function is used to insert text input in an input field/box. text_input is the string you want to insert and must be wrapped with double quotation marks. A simple use case can be type("Hello, world!"), which inserts the string "Hello, world!" into the input area on the smartphone screen. This function is only callable when you see a keyboard showing in the lower half of the screen. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'text_input': {
+                'type': 'string',
+                'description': 'The text string to input using the keyboard.'
+            }
+        },
+        'required': ['text_input'],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        text_input = params['text_input']
+        self.executor.do("Type", text=text_input)
+        self.recorder.update_after(self.executor.current_return, f"do('action='Type', text='{text_input}')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class LongPress(BaseTool):
+    
+    name = 'long_press'
+    description = 'This function is used to long press a UI element shown on the smartphone screen. The element is identified by the rectangular area defined by the coordinates (x1, y1) and (x2, y2). The function calculates the center of this area and performs a long press action at that point. A simple use case can be long_press(462,1693,619,1870), which long presses the UI element labeled on [540.5,1781.5]. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'x1': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the top-left corner of the rectangle.'
+            }, 
+            'y1': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the top-left corner of the rectangle.'
+            },
+            'x2': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the bottom-right corner of the rectangle.'
+            },
+            'y2': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the bottom-right corner of the rectangle.'
+            }
+        },
+        'required': ['x1', 'y1', 'x2', 'y2'],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        element = [params['x1'], params['y1'], params['x2'], params['y2']]
+        self.executor.do("Long Press", element)
+        self.recorder.update_after(self.executor.current_return, f"do('action='Long Press', element={element})")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class Swipe(BaseTool):
+    
+    name = 'swipe'
+    description = 'This function simulates a swipe gesture on a smartphone screen, which can be applied to UI elements like scroll views or slide bars. The swipe starts from the center of a rectangular area defined by (x1, y1) and (x2, y2), then moves in a specified direction for a certain distance. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'x1': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the top-left corner of the rectangle.'
+            }, 
+            'y1': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the top-left corner of the rectangle.'
+            },
+            'x2': {
+                'type': 'integer',
+                'description': 'The x-coordinate of the bottom-right corner of the rectangle.'
+            },
+            'y2': {
+                'type': 'integer',
+                'description': 'The y-coordinate of the bottom-right corner of the rectangle.'
+            },
+            'direction': {
+                'type': 'string',
+                'description': 'The direction of the swipe ("up", "down", "left", "right").'
+            },
+            'dist': {
+                'type': 'string',
+                'description': 'The distance of the swipe, with options "long", "medium", "short". Defaults to "medium". Required if action is "Swipe" and direction is specified.'
+            }
+        },
+        'required': ['x1', 'y1', 'x2', 'y2', 'direction', 'dist'],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        element = [params['x1'], params['y1'], params['x2'], params['y2']]
+        direction = params['direction']
+        dist = params['dist']
+        self.executor.do("Swipe", element, direction=direction, dist=dist)
+        self.recorder.update_after(self.executor.current_return, f"do('action='Swipe', element={element}, direction='{direction}', dist={dist})")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class Back(BaseTool):
+    
+    name = 'back'
+    description = 'Simulates a back button press. This method navigates the user back to the previous screen or state in the application or operating system. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {},
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        self.executor.do("Back")
+        self.recorder.update_after(self.executor.current_return, f"do('action='Back')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class Home(BaseTool):
+    
+    name = 'home'
+    description = 'Simulates pressing the home button. This method takes the user to the home screen of the device, minimizing the current application or context. It\'s akin to exiting the current state and returning to the main dashboard or operating system\'s primary interface. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {},
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        self.executor.do("Home")
+        self.recorder.update_after(self.executor.current_return, f"do('action='Home')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        return compressed_xml_json
+
+
+class Submit(BaseTool):
+    
+    name = 'submit'
+    description = 'Submit the evidences when completes the task.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'message': {
+                'type': 'string',
+                'description': 'A message to print before exiting.'
+            }, 
+            'evidences': {
+                'type': 'array',
+                'items': {
+                    'type': 'integer'
+                },
+                'description': 'A list of integers representing the IDs of the decisive evidence steps that led to the successful completion of the task. If the task was not completed successfully, this list can be empty. An individual piece of evidence is a **Tool Call**. This includes its unique ID, its input parameters, and its output result. Each tool call is assigned a unique number `x`, formatted as `[TOOL CALL ID: x]`'
+            }
+        },
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        message = params.get('message', None)
+        evidences = params.get('evidences', [])
+        self.executor.finish(message, evidences)
+        self.recorder.update_after(self.executor.current_return, f"do('action='finish', message='{message}', evidences={evidences})")
+        self.recorder.turn_number += 1
+        return f"Task Complete. Your Message is {message} and Your Submitted Evidences are {evidences}\n**PLEASE STOP CALLING ANY TOOL NOW AND OUTPUT THE ANSWER.**"
+
+class Wait(BaseTool):
+    
+    name = 'wait'
+    description = 'This function waits for a specified amount of time. Useful for allowing the screen to load or for timing delays between actions. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'seconds': {
+                'type': 'integer',
+                'description': 'The number of seconds to wait. Default is 5 seconds if not specified.'
+            }
+        },
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        seconds = params.get('seconds', 5)  # Default to 5 seconds
+        self.executor.do("Wait", seconds=seconds)
+        self.recorder.update_after(self.executor.current_return, f"do('action='Wait', seconds={seconds})")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        obs_prompt = "Current Round Screen ** XML **\n" + compressed_xml_json
+        return obs_prompt
+
+
+class Enter(BaseTool):
+    
+    name = 'enter'
+    description = 'Simulates pressing the Enter key. This is typically used to confirm input or submit forms. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {},
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        self.executor.do("Enter")
+        self.recorder.update_after(self.executor.current_return, f"do('action='Enter')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        obs_prompt = "Current Round Screen ** XML **\n" + compressed_xml_json
+        return obs_prompt
+
+
+class Launch(BaseTool):
+    
+    name = 'launch'
+    description = 'Launches a specified application on the device. The app parameter should be the name of the application to launch. Return a string that contains the latest XML of the current screen.'
+    parameters = {
+        'type': 'object',
+        'properties': {
+            'app': {
+                'type': 'string',
+                'description': 'The name of the application to launch (e.g., "Chrome", "Calculator", "Settings").'
+            }
+        },
+        'required': ['app'],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        params = self._verify_json_format_args(params)
+        app = params['app']
+        self.executor.do("Launch", app=app)
+        self.recorder.update_after(self.executor.current_return, f"do('action='Launch', app='{app}')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        obs_prompt = "Current Round Screen ** XML **\n" + compressed_xml_json
+        return obs_prompt
+
+
+class GetCurrentXML(BaseTool):
+    
+    name = 'get_current_xml'
+    description = 'This function is used to get the current XML representation of the smartphone screen without performing any action. It returns the latest XML of the current screen state.'
+    parameters = {
+        'type': 'object',
+        'properties': {},
+        'required': [],
+    }
+    
+    def __init__(self, executor, controller, recorder, accessibility=False):
+        self.executor = executor
+        self.controller = controller
+        self.recorder = recorder
+        self.accessibility = accessibility
+        super().__init__()
+    
+    def call(self, params: Union[str, dict], **kwargs) -> str:
+        # Update the recorder to get the latest screenshot and XML
+        self.recorder.update_after(self.executor.current_return, f"do('action='GetCurrentXML')")
+        self.recorder.turn_number += 1
+        import time; time.sleep(5)  # Wait for the tap action to complete
+        self.recorder.update_before(controller=self.controller, need_screenshot=True, ac_status=self.accessibility)
+        compressed_xml_json = self.recorder.get_latest_xml()
+        obs_prompt = "Screen ** XML **\n" + compressed_xml_json
+        return obs_prompt
+
+

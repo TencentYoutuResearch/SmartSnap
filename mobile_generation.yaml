@@ -1,0 +1,81 @@
+# Mobile Task Generation Configuration
+# 用于批量生成移动任务响应的配置文件
+
+trainer:
+  nnodes: 1
+  n_gpus_per_node: 8  # 根据你的GPU资源调整
+  device: cuda
+
+data:
+  path: ./data/train.parquet  # 你的parquet文件路径
+  prompt_key: prompt  # parquet文件中包含对话的列名
+  n_samples: 1  # 每个prompt生成多少个响应
+  output_path: ./mobile_generation_output.parquet  # 输出文件路径
+  batch_size: 1  # 批次大小，根据GPU内存调整
+
+model:
+  path: /nfs-shared/models/qwen3-32b  # 你的模型路径
+  external_lib: null
+
+rollout:
+  _target_: verl.workers.config.RolloutConfig
+  name: vllm  # 使用vllm进行推理
+  mode: async 
+  temperature: 1.0  # 生成温度
+  top_k: 50
+  top_p: 0.9
+  # prompt_length: 4096  # prompt最大长度
+  # response_length: 2048  # 响应最大长度
+  prompt_length: 4096
+  response_length: 10000
+
+
+  # vLLM配置
+  dtype: bfloat16
+  gpu_memory_utilization: 0.5  # GPU内存使用率
+  ignore_eos: False
+  enforce_eager: True
+  free_cache_engine: True
+  load_format: dummy_dtensor
+  tensor_model_parallel_size: 1
+  max_num_batched_tokens: 8192
+  max_model_len: null
+  max_num_seqs: 1024
+  log_prob_micro_batch_size: null
+  log_prob_micro_batch_size_per_gpu: 8
+  
+  # 其他配置
+  do_sample: True
+  disable_log_stats: True
+  enable_chunked_prefill: True
+  n: 1
+  calculate_log_probs: False
+  
+  # Agent配置
+  agent:
+    num_workers: 1
+  
+  # Multi-turn配置，用于工具使用
+  multi_turn:
+    max_tool_response_length: 2000
+    max_assistant_turns: 10
+    max_parallel_calls: 1
+    format: "native"
+    tool_config_path: "/nfs-shared/shaofei/nfs-workspace/SV-AGENT/mobile_tool_config.json"
+
+actor:
+  strategy: fsdp
+  use_dynamic_bsz: True
+  param_offload: True
+  optimizer_offload: True
+  ulysses_sequence_parallel_size: 1
+  entropy_from_logits_with_chunking: False
+  entropy_checkpointing: False
+  fsdp_config:
+    fsdp_size: -1
+    forward_prefetch: False
+
+ray_kwargs:
+  ray_init:
+    num_cpus: null
+  timeline_json_file: null

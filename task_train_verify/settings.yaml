@@ -1,0 +1,1036 @@
+APP: Settings
+package: com.android.settings
+tasks:
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable Do Not Disturb mode.
+  task_id: settings_0
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust font size to large.
+  task_id: settings_1
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Check for system updates.
+  task_id: settings_2
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set screen timeout to 2 minutes.
+  task_id: settings_3
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Increase screen brightness.
+  task_id: settings_4
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Disable automatic updates.
+  task_id: settings_5
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Clear browsing history.
+  task_id: settings_6
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn off Bluetooth.
+  task_id: settings_7
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the method to enable USB debugging on my Android device?
+  task_id: settings_8
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I set a data limit to avoid overusing mobile data on my Android phone?
+  task_id: settings_9
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I restrict background data usage for specific apps on my Android device?
+  task_id: settings_10
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to set the homepage layout on an Android phone?
+  task_id: settings_11
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What steps should I follow to enable Do Not Disturb mode on my Android phone?
+  task_id: settings_12
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me to delete my networks whose WiFi name is 20210908 on Android.
+  task_id: settings_13
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do I change the battery mode on my Android smartphone?
+  task_id: settings_14
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What method can I use to back up my Android phone?
+  task_id: settings_15
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the display size to small on Android devices.
+  task_id: settings_16
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to change the duration of screen brightness on Android devices?
+  task_id: settings_17
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do I customize the notification settings for a specific app on Android?
+  task_id: settings_18
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me schedule automatically power off times at 23:30 every day  on my Android
+    device.
+  task_id: settings_19
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to change the language of my Android device?
+  task_id: settings_20
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to modify the language on an Android phone?
+  task_id: settings_21
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the display size to large on Android devices.
+  task_id: settings_22
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on color correction on your Android device and set the correction mode
+    to Tritanomaly.
+  task_id: settings_23
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to check for system updates on an Android phone?
+  task_id: settings_24
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me configure 'Do Not Disturb' mode to only allow calls from my contacts
+    on Android.
+  task_id: settings_25
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to set high screen resolution on an Android phone?
+  task_id: settings_26
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to change the camera usage permissions of an application on an Android
+    phone?
+  task_id: settings_27
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do you reset network settings on an Android device?
+  task_id: settings_28
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the procedure to manually update the system on my Android device?
+  task_id: settings_29
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn off microphone permissions for the Camera app on your Android device.
+  task_id: settings_30
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me enable battery saver mode on my Android smartphone.
+  task_id: settings_31
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What steps do I take to set up a VPN connection on my Android device?
+  task_id: settings_32
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to change my Android device's language and input settings?
+  task_id: settings_33
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up scheduled eye protection mode on Android devices, with a start time
+    of 9 PM and an end time of 6 AM the next morning.
+  task_id: settings_34
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How do I change the language on my Android smartphone?
+  task_id: settings_35
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How do I configure Do Not Disturb mode settings on my Android phone?
+  task_id: settings_36
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I set a data limit to avoid excess usage charges on my Android phone?
+  task_id: settings_37
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to set an Android phone to eye protection mode?
+  task_id: settings_38
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set the screen resolution to high on your Android device to make the screen
+    clearer.
+  task_id: settings_39
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: Help me check if the developer options is enabled on my Android phone.
+  task_id: settings_40
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change your Android device's screen color temperature to warm for a better
+    color experience.
+  task_id: settings_41
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What actions should I take to display battery usage by app on Android?
+  task_id: settings_42
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me change the default Browser app to Baidu on my Android phone.
+  task_id: settings_43
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How can I set up a Screen Pinning on my Android device to prevent others from
+    using other apps?
+  task_id: settings_44
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What should I do to reset my Android device to its factory settings?
+  task_id: settings_45
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to check the battery health status of Android phones?
+  task_id: settings_46
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set to dark mode on Android phones.
+  task_id: settings_47
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I adjust the font size on my Android device for better readability?
+  task_id: settings_48
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set the battery percentage display mode to no display on your Android device.
+  task_id: settings_49
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up scheduled do not disturb mode on Android devices for Saturdays and
+    Sundays, with a start time of 9 PM and an end time of 6 AM the next morning.
+  task_id: settings_50
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set the font size to large on your Android device.
+  task_id: settings_51
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I set a data usage limit on my Android smartphone to avoid overage
+    charges?
+  task_id: settings_52
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on color inversion on your Android device.
+  task_id: settings_53
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me enable grayscale mode on my Android device so that I can help reduce
+    screen distraction.
+  task_id: settings_54
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I manage app permissions of location on my Android smartphone?
+  task_id: settings_55
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I clear the cache for a specific app on my Android phone?
+  task_id: settings_56
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What steps should I follow to save the battery on my Android device?
+  task_id: settings_57
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enabling Auto-download over WLAN on Android devices.
+  task_id: settings_58
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to set the screen refresh rate to high on an Android phone?
+  task_id: settings_59
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do I customise the notification settings for a specific app on Android?
+  task_id: settings_60
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Disable notifications for the Amap app in Android devices.
+  task_id: settings_61
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do I modify the text size and display size on my Android device?
+  task_id: settings_62
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to set the time display to 24-hour on an Android phone?
+  task_id: settings_63
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the procedure for manually updating the system software on my Android
+    device?
+  task_id: settings_64
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I customize the quick start function on my Android phone?
+  task_id: settings_65
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me enable dark mode of color scheme on my Android device.
+  task_id: settings_66
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Help me change the size of the font to the biggest one on my Android device.
+  task_id: settings_67
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the process of disabling specific application permissions on Android?
+  task_id: settings_68
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I check for updates on my Android device?
+  task_id: settings_69
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How to change the region on an Android phone?
+  task_id: settings_70
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Can you help me adjust the automatic screen brightness on my Android device?
+  task_id: settings_71
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How can I back up my Android phone's data to my computer?
+  task_id: settings_72
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Create a new visitor on your Android device.
+  task_id: settings_73
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How do I disable app notifications on my Android device?
+  task_id: settings_74
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adding Italiano to the system language options for Android devices.
+  task_id: settings_75
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do you change the screen time limit on an Android device for better battery
+    life?
+  task_id: settings_76
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the method for checking for malware or security issues on my Android
+    device?
+  task_id: settings_77
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Create a new user on your Android device named Anna.
+  task_id: settings_78
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What is the method for activating one-handed mode on my Android phone?
+  task_id: settings_79
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How do I configure silent mode on my Android device?
+  task_id: settings_80
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How do I back up my data on my Android phone?
+  task_id: settings_81
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Can you guide me on how to enable gesture navigation instead of the traditional
+    navigation buttons on Android?
+  task_id: settings_82
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on color correction on your Android device and set the correction mode
+    to Deuteranomaly.
+  task_id: settings_83
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Setting to show the battery percentage outside the battery icon on Android
+    devices.
+  task_id: settings_84
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How can I set up a smart unlock  on Android?
+  task_id: settings_85
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: How can I view and control which apps have access to my location on my Android
+    phone?
+  task_id: settings_86
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set the message ringtone of phone card 2 to Leap on your Android device.
+  task_id: settings_87
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: How to set up automatic time zone on Android?
+  task_id: settings_88
+- metric_func: evaluation.tasks.setting
+  metric_type: query_detect
+  task: What are the steps to change the message usage permissions of an application
+    on an Android phone?
+  task_id: settings_89
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: change the notification style to android.
+  task_id: settings_90
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage permissions for apps to protect your privacy on your Android device.
+  task_id: settings_91
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule power on/off times to automatically switch your Android device on
+    or off at a specified time.
+  task_id: settings_92
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Developer Options' to access advanced settings and features for development
+    purposes on your Android device.
+  task_id: settings_93
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up a VPN to encrypt and secure your internet connection on your Android
+    device.
+  task_id: settings_94
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set your Android device to light up when you receive a notification so you
+    can process the information in a timely
+  task_id: settings_95
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize your quick settings panel to access your most frequently used settings
+    quickly on your Android device.
+  task_id: settings_96
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the display size to small and font size to small to improve visibility
+    or screen space utilization on your Android device.
+  task_id: settings_97
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Use "Adaptive Brightness" to automatically adjust your screen brightness based
+    on lighting conditions and usage mode on your Android device, then turn on ebook
+    mode.
+  task_id: settings_98
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the ring tone to contacts for easier identification of callers on
+    your Android device.
+  task_id: settings_99
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Battery Saver' mode to extend battery life on your Android device.
+  task_id: settings_100
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule Night Light to automatically reduce blue light emission during evening
+    hours on your Android device.
+  task_id: settings_101
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Mono Audio' for headphone use, which can be beneficial for those with
+    hearing impairments using your Android device.
+  task_id: settings_102
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable the eye protection mode to reduce eye strain during night-time use
+    of your Android device.
+  task_id: settings_103
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Encrypt your Android device to protect your personal information in case it
+    is lost or stolen.
+  task_id: settings_104
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Calibrate the display color of the device and switch the calibration mode
+    to red color deficiency.
+  task_id: settings_105
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the Quick Settings panel and long press the volume key to access
+    the Settings you use most often.
+  task_id: settings_106
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable grayscale mode to reduce distractions and save battery life on your
+    Android device.
+  task_id: settings_107
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up automatic night mode on your Android device to reduce eye strain in
+    the evening.
+  task_id: settings_108
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Modify the display and brightness settings to set the screen's sleep time
+    to 5 minutes.
+  task_id: settings_109
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure the 'Do Not Disturb' rules to silence notifications on your Android
+    device from 11 PM to 7 AM on Saturday and Sunday nights.
+  task_id: settings_110
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the screen timeout settings to preserve battery life on your Android
+    device.
+  task_id: settings_111
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the default app for web browsing and messaging to customize your experience
+    on your Android device.
+  task_id: settings_112
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up a VPN to "always on".
+  task_id: settings_113
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Backup your data to Xiaomi's cloud service to keep your information safe and
+    easily restore it when needed on your Android device.
+  task_id: settings_114
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule 'Do Not Disturb' mode to automatically enable during meetings or
+    sleep hours on your Android device.
+  task_id: settings_115
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Modify the font size and display size settings to make the text more readable
+    on your device.
+  task_id: settings_116
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust screen color settings to enhance readability or reduce eye strain for
+    your Android device.
+  task_id: settings_117
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage app permissions to enhance privacy and limit access to personal data
+    on your Android device.
+  task_id: settings_118
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Backup your data to Google Drive to keep your information secure and retrievable
+    on your Android device.
+  task_id: settings_119
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage app permissions to control what information and features can be accessed
+    by apps on your Android device.
+  task_id: settings_120
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the system navigation method on your Android device to the three-button
+    on-screen navigation.
+  task_id: settings_121
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable the "Screen Time Management" feature to monitor and limit your screen
+    usage time on your Android device, and set the available time on weekends to 8
+    hours.
+  task_id: settings_122
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the 'Automatic shutdown' settings to have your Android device turn
+    off at a scheduled time to save on energy and extend its longevity.
+  task_id: settings_123
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: shut down the Sogou keyboard on your Android device.
+  task_id: settings_124
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule the 'Do Not Disturb' mode to automatically silence notifications
+    during specific times on your Android device.
+  task_id: settings_125
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize battery usage by automatically setting your Android device to sleep
+    when you're not using the app.
+  task_id: settings_126
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Make the navigation bar background transparent by default.
+  task_id: settings_127
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule a Do Not Disturb mode to automatically silence your Android device
+    at specific times.
+  task_id: settings_128
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Power Saving' mode to extend the battery life of your Android device
+    when it's running low.
+  task_id: settings_129
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the Quick Ball panel and move aside when full screen to access your
+    most used settings swiftly on your Android device.
+  task_id: settings_130
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Adaptive Brightness' to automatically adjust your screen brightness
+    based on your environment on your Android device.
+  task_id: settings_131
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Organize your quick settings tiles to access your most-used settings quickly
+    on your Android device.
+  task_id: settings_132
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize storage by managing and deleting unused files and cache data on your
+    Android device.
+  task_id: settings_133
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on "Auto Power Saving Mode" to prioritize battery power on your Android
+    device.
+  task_id: settings_134
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule 'Dark Mode' to activate automatically at sunset or at a specific
+    time to ease eye strain on your Android device.
+  task_id: settings_135
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up a data usage limit to avoid overage charges on your mobile plan with
+    your Android device.
+  task_id: settings_136
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Create multiple user profiles or guest accounts to keep your personal information
+    private on a shared Android device.
+  task_id: settings_137
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize battery performance by adjusting the 'Battery Saver' settings of
+    Alipay on your Android device.
+  task_id: settings_138
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the font size for easier readability on your Android device.
+  task_id: settings_139
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule 'Night Light' to reduce blue light and help your eyes before bedtime
+    on your Android device.
+  task_id: settings_140
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Backup your data and settings to Google Drive to easily restore them on a
+    new Android device.
+  task_id: settings_141
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the 'Quick Settings' tiles for easy access to your most used settings
+    on your Android device.
+  task_id: settings_142
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Limit background data usage for specific apps to save on mobile data on your
+    Android device.
+  task_id: settings_143
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize the 'Digital Wellbeing' settings to monitor your device usage and
+    set app timers to manage screen time on your Android device.
+  task_id: settings_144
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage app permissions to protect your privacy on your Android device.
+  task_id: settings_145
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule a power on/off time for your Android device.
+  task_id: settings_146
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the 'Navigation Bar' to add, remove, or rearrange buttons according
+    to your preferences on your Android device.
+  task_id: settings_147
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure data usage warnings and restrictions for SIM card 2, and disconnect
+    the network directly when monthly data usage exceeds the limit, to avoid overage
+    charges on your Android device.
+  task_id: settings_148
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the text size and display size for easier readability on your Android
+    device.
+  task_id: settings_149
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage app permissions to protect your privacy and limit access to your data
+    on your Android device.
+  task_id: settings_150
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Adaptive Brightness' to allow your Android device to automatically
+    adjust the screen brightness based on your environment.
+  task_id: settings_151
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Automate 'Night Mode' to turn on/off automatically based on the time of day
+    on your Android device.
+  task_id: settings_152
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the default notification sound for app Zoom on your Android device
+    to "Bongo".
+  task_id: settings_153
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up 'Screen Pinning' to lock your device to one app for focused usage or
+    parental control on your Android device.
+  task_id: settings_154
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize battery usage by setting up 'Battery Saver' mode to extend the battery
+    life on your Android device.
+  task_id: settings_155
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure a VPN to encrypt your internet connection and protect your privacy
+    on your Android device.
+  task_id: settings_156
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable Developer Options for advanced device management on your Android device.
+  task_id: settings_157
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Limit the microphone permission for the "Pixel Launcher" app in permission management
+    to protect your privacy on your Android device.
+  task_id: settings_158
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule ‘Power On & Off’ times to automatically turn your Android device
+    off at night and on in the morning.
+  task_id: settings_159
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure the display of your Android device to automatically switch to "Eye
+    Protection Mode" from 9:00 PM to 7:00 AM the next day.
+  task_id: settings_160
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Do Not Disturb' rules to silence your phone automatically during
+    certain times on your Android device.
+  task_id: settings_161
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the default notification sound for your Android device.
+  task_id: settings_162
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the font thickness to bold in the display settings.
+  task_id: settings_163
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the Quick Settings panel to access the most frequently used Settings
+    by long pressing the volume key on your Android device.
+  task_id: settings_164
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the display size and font size for better readability on your Android
+    device.
+  task_id: settings_165
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Find My Device' to help you locate your Android device in case it's
+    lost or stolen.
+  task_id: settings_166
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up and use Digital Wellbeing tools to monitor device usage on your Android
+    device.
+  task_id: settings_167
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Developer Options' to access more advanced settings and tools for
+    your Android device.
+  task_id: settings_168
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the navigation bar on your Android device to improve usability.
+  task_id: settings_169
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Smart Lock' settings for easier device unlocking on your Android
+    device.
+  task_id: settings_170
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Create a user account named "jan" to share your Android device with others
+    while keeping your personal data private.
+  task_id: settings_171
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage 'App Permissions' to protect your privacy by restricting all the data
+    Photos app can access on your Android device.
+  task_id: settings_172
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Control which apps can send you notifications to minimize distractions on
+    your Android device.
+  task_id: settings_173
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable developer mode to access advanced features on your Android device.
+  task_id: settings_174
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure text-to-speech output options to assist with accessibility or for
+    hands-free use on your Android device.
+  task_id: settings_175
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the screen timeout settings to conserve battery life on your Android
+    device.
+  task_id: settings_176
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize storage by identifying and clearing junk files on your Android device.
+  task_id: settings_177
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Use 'Adaptive Brightness' to allow your phone to automatically adjust its
+    screen brightness based on your current lighting conditions on your Android device.
+  task_id: settings_178
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change your Android device's screen time limit setting to get a day off.
+  task_id: settings_179
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Activate one-handed mode to make your phone easier to use with one hand on
+    your Android device.
+  task_id: settings_180
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable Developer Options to unlock advanced settings on your Android device.
+  task_id: settings_181
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Smart Lock' settings to keep your device unlocked in safe situations,
+    like when at home or while on your body on your Android device.
+  task_id: settings_182
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the automatic screen lock time to ten minutes
+  task_id: settings_183
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change sleep time to never on Android devices.
+  task_id: settings_184
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage app permissions to control what data each app can access on your Android
+    device.
+  task_id: settings_185
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Close data usage on your Android device to avoid excess charges on your mobile
+    plan.
+  task_id: settings_186
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule power on/off to automatically turn your Android device off and on
+    at set times.
+  task_id: settings_187
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Calibrate the battery on your Android device to get a more accurate battery
+    life estimate.
+  task_id: settings_188
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Find My Device' to help locate your phone in case it gets lost or
+    stolen.
+  task_id: settings_189
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the app permissions to control privacy on your Android device.
+  task_id: settings_190
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Limit the background data usage of "Map.me" to conserve mobile data on your
+    Android device.
+  task_id: settings_191
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize your Android device by changing the theme, including icons and colors.
+  task_id: settings_192
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Disable autostart of Calendar to improve performance on your Android device.
+  task_id: settings_193
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Monitor data usage and set data warnings/limits on your Android device.
+  task_id: settings_194
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule power on/off times to automatically reboot your Android device.
+  task_id: settings_195
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the Quick Settings panel for easier access to frequently-used settings
+    on your Android device.
+  task_id: settings_196
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up 'Find My Device' to locate, lock, or erase your Android device if it
+    gets lost or stolen.
+  task_id: settings_197
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the vibration pattern for incoming calls on your Android device.
+  task_id: settings_198
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Do Not Disturb' rules on your Android device.
+  task_id: settings_199
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Disable notification settings for individual apps to reduce distractions on
+    your Android device.
+  task_id: settings_200
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: switch your color scheme from light mode to dark mode for night time.
+  task_id: settings_201
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the screen refresh rate to Smart adaptation on your Android device.
+  task_id: settings_202
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on the 'Find My Device' feature to help locate your Android device if
+    it's lost or stolen.
+  task_id: settings_203
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize the Quick Ball panel and show it on lock screen to access your most
+    used settings swiftly on your Android device.
+  task_id: settings_204
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up a new user profile on your Android device.
+  task_id: settings_205
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Modify the screen timeout settings on your Android device.
+  task_id: settings_206
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Change the system navigation method on Android devices to Navigation Dock.
+  task_id: settings_207
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable 'Developer Options' on your Android device for advanced configurations.
+  task_id: settings_208
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable developer options to access and enabledebugging and advanced features
+    on your Android device.
+  task_id: settings_209
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Optimize battery usage by managing app background activity on your Android
+    device.
+  task_id: settings_210
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Adjust the screen timeout settings to save battery or for convenience on your
+    Android device.
+  task_id: settings_211
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage no more than four background processes to improve performance and save
+    battery on your Android device.
+  task_id: settings_212
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure text-to-speech output on Android devices, resetting the speech pitch
+    to the normal value.
+  task_id: settings_213
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule 'Night Light' to reduce blue light and help improve sleep quality
+    on your Android device.
+  task_id: settings_214
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Limit background data usage for specific apps to help reduce data consumption
+    on your Android device.
+  task_id: settings_215
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Enable the "Screen Time Management" feature to monitor and limit your screen
+    usage time on your Android device.
+  task_id: settings_216
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Limit background data usage for specific apps to conserve data on your Android
+    device.
+  task_id: settings_217
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set font size to improve readability according to your preference on your
+    Android device.
+  task_id: settings_218
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Manage application permissions and turn off storage permissions for Amap to
+    save space.
+  task_id: settings_219
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Turn on Do Not Disturb mode to silence notifications during sleep time on
+    your Android device.
+  task_id: settings_220
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Customize Gmail the 'Always On Display' settings to show information on the
+    lock screen of your Android device without waking it up.
+  task_id: settings_221
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Modify text-to-speech output settings for accessibility on your Android device.
+  task_id: settings_222
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Configure 'Do Not Disturb' rules to silence your Android device during specific
+    times or events.
+  task_id: settings_223
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Schedule dark mode to automatically activate during night hours to reduce
+    eye strain on your Android device.
+  task_id: settings_224
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Set up multiple user accounts to share your Android device with others while
+    keeping your information private.
+  task_id: settings_225
+- metric_func: evaluation.tasks.setting
+  metric_type: operation
+  task: Create and manage app folders on your home screen to keep your apps organized.
+  task_id: settings_226

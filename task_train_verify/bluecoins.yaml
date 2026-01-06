@@ -1,0 +1,388 @@
+APP: bluecoins
+package: com.rammigsoftware.bluecoins
+tasks:
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Analyze your dining out expenses from the last month in Bluecoins.
+  task_id: bluecoins_0
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Compare last month's Cash Assets with this month's to see the difference
+    in Bluecoins.
+  task_id: bluecoins_1
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Use Bluecoins to set a cap of 500 RMB for your monthly utilities budget.
+  task_id: bluecoins_2
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new item in reminders that repeats every other week with a start date
+    of 2024.5.19 and an end date of 2024.5.30. the type is income, the name is stall,
+    and the amount is 300.
+  task_id: bluecoins_3
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add 500 yuan of bonus income to your account in BlueCoins.
+  task_id: bluecoins_4
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a new separate category which is utility in Bluecoins so I can track
+    and manage my monthly utility bills.
+  task_id: bluecoins_5
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Configure a savings goal of 200 per month for a vacation fund in Bluecoins
+    and track your progress toward the goal each month.
+  task_id: bluecoins_6
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Check to see if I overspent my entertainment budget last month
+  task_id: bluecoins_7
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: View your grocery budget from last year on Bluecoins.
+  task_id: bluecoins_8
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Plan for a vacation by creating a savings goal in Bluecoins.
+  task_id: bluecoins_9
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a monthly budget for groceries and track your spending against this
+    budget in Bluecoins.
+  task_id: bluecoins_10
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create custom tags for specific types of transactions,such as 'tax-deductible' or 'business-related,' to streamline tracking for tax purposes in Bluecoins.
+  task_id: bluecoins_11
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Design a debt payment plan for credit cards in Bluecoins and alert as you
+    make payments each month.
+  task_id: bluecoins_12
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new item in reminders that repeats every other year with a start date of 2024.5.19 and an end date of 2030.5.30. the type is Expense, the name is Loan, and the amount is 5000.
+  task_id: bluecoins_13
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a comprehensive budget in Bluecoins for all your monthly expenses,including rent,groceries.
+  task_id: bluecoins_14
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Analyze your vacation expenses for the past 3 months in Bluecoins.
+  task_id: bluecoins_15
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: View this year's utility bill expenses on Bluecoins.
+  task_id: bluecoins_16
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: View the budget and actual expenses for dining out this month.
+  task_id: bluecoins_17
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up recurring expense entries for monthly bills like bike expenses,bus
+    costs in Bluecoins.
+  task_id: bluecoins_18
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: To plan and record expenses for home improvement projects with Bluecoins, create relevant budgets that categorize costs by materials, labor, and contingencies.
+  task_id: bluecoins_19
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Categorize monthly expenses into needs,wants,and savings.
+  task_id: bluecoins_20
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a new account in the bluecoins to track a dedicated bank savings account for a big purchase,like
+    a car or home,in Bluecoins.
+  task_id: bluecoins_21
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Create a budget for your weekly groceries and track your spending against
+    it in Bluecoins.
+  task_id: bluecoins_22
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a new expense in Reminder, repeat every other month, starting on 2024.5.19
+    and ending on 2025.7.19, item “Loan Repayment”, amount 5000.
+  task_id: bluecoins_23
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Track your monthly water bill and use Bluecoins to compare this year's expenses
+    to the previous year's.
+  task_id: bluecoins_24
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Design a debt repayment plan by setting up a recurring transaction for your
+    loan payments and monitor your remaining balance each month in Bluecoins.
+  task_id: bluecoins_25
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Implement a debt relief program in Bluecoins by developing a monthly 200 RMB
+    debt repayment reminder and tracking repayments.
+  task_id: bluecoins_26
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a new savings account “Unemployment security” for your Bluecoins, type
+    bank, for risk management.
+  task_id: bluecoins_27
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: To manage labels, create a new label “pet” in the labels section.
+  task_id: bluecoins_28
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction to the budget summary, Type Expense, Name “Book Purchase”,
+    Amount 200, Date 2024.6.19.
+  task_id: bluecoins_29
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a budget category “Pet Expenses” with Bluecoins and set a monthly limit
+    of 100 RMB.
+  task_id: bluecoins_30
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a detailed car maintenance log with categories for fuel,repairs,and
+    routine maintenance,and track these expenses monthly in Bluecoins.
+  task_id: bluecoins_31
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new category to the budget summary, type of expenditure, name “Rent”,
+    grouped as family.
+  task_id: bluecoins_32
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction in the Transactions section, type income, name “Interest”,
+    amount 500, date 2024.5.19.
+  task_id: bluecoins_33
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Analyze your monthly utility bills by inputting them into Bluecoins and using
+    the app to compare month-on-month expenses.
+  task_id: bluecoins_34
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction in the Transactions section, type Expense, purchase
+    item “Refrigerator”, amount 1500, date 2024.5.19.
+  task_id: bluecoins_35
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Compare your monthly income versus expenses report for this month in Bluecoins.
+  task_id: bluecoins_36
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: View your electricity budget for last month on BlueCoins.
+  task_id: bluecoins_37
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction to Net Earnings, Type Earnings, Name Salary, Amount
+    3000, Date 2024.5.19.
+  task_id: bluecoins_38
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a weekly dining out and swimming category to monitor and reduce discretionary
+    spending in Bluecoins.
+  task_id: bluecoins_39
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a savings goal for an emergency fund and log daily or weekly contributions
+    to meet your target amount 3000 RMB within a year in Bluecoins.
+  task_id: bluecoins_40
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Monitor fuel consumption and costs by viewing all gasoline costs in Bluecoins.
+    Analyze data for savings opportunities.
+  task_id: bluecoins_41
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Record an income from salary to bank savings, the amount is $500, by Bluecoins.
+  task_id: bluecoins_42
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Configure some particular categories like groceries or dining out in Bluecoins.
+  task_id: bluecoins_43
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Record the dining out expenses of 250 yuan in Bluepoints account.
+  task_id: bluecoins_44
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: In the budget summary (bluecoins), add a new category “game”, type of expenditure, grouped
+    as recreation.
+  task_id: bluecoins_45
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Record the salary income of 2500 yuan in the account.
+  task_id: bluecoins_46
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Set a monthly dining out budget and use Bluecoins to ensure you do not exceed
+    this amount each month.
+  task_id: bluecoins_47
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a travel fund and log all travel-related expenses to stay within budget
+    on your next vacation using Bluecoins.
+  task_id: bluecoins_48
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: In the balance sheet, add a new transaction, Type Expense, Name Book Purchase,
+    Amount 200, Date 2024.6.19, Note “Purchase of Educational Books”.
+  task_id: bluecoins_49
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new item to reminders that repeats every other month with a start date
+    of 2024.5.19 and an end date of 2024.9.19. The type is Income, the name is Rent,
+    and the amount is 1500.
+  task_id: bluecoins_50
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Establish a health and wellness budget, and set the goal at $300 per month
+    in Bluecoins.
+  task_id: bluecoins_51
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a budget category “Family Activities” with Bluecoins and set a monthly
+    limit of 200 RMB.
+  task_id: bluecoins_52
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Show my  detail expenses on the car this month,including fuel and repair,in
+    Bluecoins.
+  task_id: bluecoins_53
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction to the calendar, type income, name part-time, amount
+    500, date 2024.5.19.
+  task_id: bluecoins_54
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Create and manage a portfolio for your investments and track their performance
+    monthly in Bluecoins.
+  task_id: bluecoins_55
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Check out the total amount spent on household items over the course of a year
+    with Bluecoins.
+  task_id: bluecoins_56
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a separate account named 'family' in Bluecoins so that I can manage
+    a household fund.
+  task_id: bluecoins_57
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Compare month-over-month spending trends of the category for moive in last
+    3 month.
+  task_id: bluecoins_58
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a separate account for loans which named as car loans so that I can
+    manage and monitor your debt repayments.
+  task_id: bluecoins_59
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set a budget with Bluecoins, capped at 500 RMB, to minimize spending on non-essentials
+    for a month.
+  task_id: bluecoins_60
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a budget category “Video Site Membership” with Bluecoins and set a monthly
+    cap of 30 RMB.
+  task_id: bluecoins_61
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction to Transactions, Type Expense, Name Purchase Expense,
+    Amount 300, Date 2024.5.19.
+  task_id: bluecoins_62
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Create a budget for your upcoming vacation and track expenses against it in
+    Bluecoins.
+  task_id: bluecoins_63
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction in reminders that repeats every other month with a start
+    time of 2024.5.19 and an end time of 2024.7.19. The type is Expense, the name
+    is Repayment, the amount is 500.
+  task_id: bluecoins_64
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Use Bluecoins to set up a savings challenge,such as saving a specific amount
+    each week or month,and monitor your achievement.
+  task_id: bluecoins_65
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction in Transactions, Type Expense, Name Food, Amount 50,
+    Date 2024.5.19.
+  task_id: bluecoins_66
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new transaction to the calendar, type Expense, name Haircut, amount
+    100, date 2024.5.19.
+  task_id: bluecoins_67
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Use Bluecoins to create a budget for pet-related expenses, with pet-related
+    expenses such as vet visits and pet food not exceeding 500 RMB per month.
+  task_id: bluecoins_68
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Check my utilities bills for last six months so that I can identify trends
+    and save on future bills using Bluecoins.
+  task_id: bluecoins_69
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Set up a health budget of 200 RMB per month for doctor's visits, fitness,
+    etc.
+  task_id: bluecoins_70
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a new category to the budget summary with the type of income, the name
+    “part-time work” and the grouping “other”.
+  task_id: bluecoins_71
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Schedule a recurring monthly payment plan for your RMB 500 rent with Bluecoins
+    and enter it as a transaction record on the due date.
+  task_id: bluecoins_72
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: In the budget summary, add a new category “groceries” with the category Expenditures,
+    Family Grouping.
+  task_id: bluecoins_73
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Create a budget for your monthly grocery expenses and track your spending
+    against it in Bluecoins.
+  task_id: bluecoins_74
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Adujst the household budget to $2000 per month within Bluecoins.
+  task_id: bluecoins_75
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Add a budget category “Car Insurance” with Bluecoins and set a monthly limit
+    of 200 RMB.
+  task_id: bluecoins_76
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Analyze your health and wellness expenses by categorizing spending on gym
+    memberships,supplements,and medical bills,and identify areas to save costs in
+    Bluecoins.
+  task_id: bluecoins_77
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: operation
+  task: Analyze your annual income tax and set aside that amount monthly in Bluecoins
+    to prevent end-of-year surprises.
+  task_id: bluecoins_78
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: Analyze your income for the previous 12 months, in Bluecoins.
+  task_id: bluecoins_79
+- metric_func: evaluation.tasks.bluecoins
+  metric_type: query_detect
+  task: View the medical budget for this year and the current usage situation.
+  task_id: bluecoins_80

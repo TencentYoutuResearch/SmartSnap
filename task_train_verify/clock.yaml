@@ -1,0 +1,180 @@
+APP: clock
+package: com.google.android.deskclock
+tasks:
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Reset my alarm of 7:30 AM for 7 AM.
+  task_id: clock_0
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Start a new timer for 20 minutes.
+  task_id: clock_1
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Change my alarm sound to "Carbon".
+  task_id: clock_2
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 6 AM tomorrow.
+  task_id: clock_3
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Cancel my 7:30 AM alarm.
+  task_id: clock_4
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set a nap timer for 30 minutes.
+  task_id: clock_5
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set a bedtime reminder for 10 PM.
+  task_id: clock_6
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Adjust my bedtime reminder to 11 PM.
+  task_id: clock_7
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Change my alarm sound to "Piezo Alarm".
+  task_id: clock_8
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set a timer for 15 minutes.
+  task_id: clock_9
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the clock, then set a new alarm at 13:40.
+  task_id: clock_10
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: I don't have to work tomorrow. So I can go grocery shopping. Thus, set on
+    the Clock app for the 5 PM grocery alarm
+  task_id: clock_11
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: The gardening club meeting has been rescheduled by one hour, so set the alarm
+    for 9:00 PM in the clock app.
+  task_id: clock_12
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Add an alarm at 20:00.
+  task_id: clock_13
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Use the stopwatch in the Clock application and start the stopwatch.
+    Then, click pause.
+  task_id: clock_14
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Go to the Google Clock app pause and delete the timer.
+  task_id: clock_15
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the Google Clock app and start the timer for 60s.
+  task_id: clock_16
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: I can go grocery shopping because I don't have to work tomorrow. Thus, set
+    the 4 PM grocery alarm on the Google Clock app.
+  task_id: clock_17
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open a clock, and set an alarm for 8am
+  task_id: clock_18
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 8pm
+  task_id: clock_19
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 8 pm
+  task_id: clock_20
+- metric_func: evaluation.tasks.clock
+  metric_type: query_detect
+  task: Open the Clock app and check what time is it now at Cape Town?
+  task_id: clock_21
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 9am
+  task_id: clock_22
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the clock app,
+  task_id: clock_23
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 7pm
+  task_id: clock_24
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 4pm
+  task_id: clock_25
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 3pm
+  task_id: clock_26
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Set an alarm for 10am
+  task_id: clock_27
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the Clock app and set the alarm for 9:15 PM.
+  task_id: clock_28
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: I cook my breakfast at 9 a.m., therefore set an alarm in the alarm clock
+    app for Monday to make katsu curry.
+  task_id: clock_29
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: I want to set an alarm for 6 a.m. in the Clock app.
+  task_id: clock_30
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the Clock app and delay the alarm of 9:15 PM by 10 minutes.
+  task_id: clock_31
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open The Clock app and set the alarm for 7:15 AM
+  task_id: clock_32
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: In The Clock App,click on the reset button to reset the stopwatch to 0
+  task_id: clock_33
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Start the stopwatch in the clock app
+  task_id: clock_34
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the Alarm Clock app and set the alarm for 9:15 AM
+  task_id: clock_35
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Change the alarm 4:00 PM to 8:15 AM in the Alarm clock app
+  task_id: clock_36
+- metric_func: evaluation.tasks.clock
+  metric_type: query_detect
+  task: Show the clock time for Berlin Germany
+  task_id: clock_37
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open The Clock app and delete the 8:30 AM alarm.
+  task_id: clock_38
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open The Clock app and delete the 9 AM alarm.
+  task_id: clock_39
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open The Clock app and Delay the alarm of 9:00 AM by 10 minutes.
+  task_id: clock_40
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the clock app, set the timer for 06.55 and pause the timer.
+  task_id: clock_41
+- metric_func: evaluation.tasks.clock
+  metric_type: operation
+  task: Open the Alarm Clock app and Delay the alarm of 7:30 AM by 21 minutes.
+  task_id: clock_42

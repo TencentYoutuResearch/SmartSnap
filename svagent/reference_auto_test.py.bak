@@ -1,0 +1,713 @@
+import datetime
+import time
+import json
+from evaluation.configs import TaskConfig
+from evaluation.docker_utils import create_docker_container, execute_command_in_container, remove_docker_container, \
+    start_avd, stop_avd
+from evaluation.evaluation import *
+from evaluation.utils import *
+from page_executor import TextOnlyExecutor
+from page_executor.simple_vision_executor import VisionExecutor
+from recorder import JSONRecorder
+from templates import *
+from templates.packages import find_package
+
+from evaluation.control_tool import *
+from qwen_agent.agents import Assistant
+from qwen_agent.utils.output_beautify import typewriter_print
+
+
+class Instance():
+    def __init__(self, config, idx = 0):
+        self.idx = str(idx)
+        self.type = "cmd"
+        self.config = config
+        self.container_id = None
+        self.docker_port_local = None
+        self.avd_name = None
+        self.tar_avd_dir = None
+        self.tar_ini_file = None
+        self.initialize_worker()
+
+    def initialize_worker(self):
+        sdk_path = self.config.avd_base
+        src_avd_name = self.config.avd_name
+        self.avd_name = f"{src_avd_name}_{self.idx}"
+        self.tar_avd_dir, self.tar_ini_file = clone_avd(src_avd_name, self.avd_name, sdk_path)
+
+    def initialize_single_task(self, config = None):
+        avd_name = self.avd_name
+        print_with_color(f"Starting Android Emulator with AVD name: {avd_name}", "blue")
+        if not os.path.exists(self.config.avd_log_dir):
+            os.makedirs(self.config.avd_log_dir, exist_ok=True)
+        out_file = open(os.path.join(self.config.avd_log_dir, f'emulator_output_{self.idx}.txt'), 'a')
+
+        if self.config.show_avd:
+            emulator_process = subprocess.Popen(["emulator", "-avd", avd_name, "-no-snapshot-save"], stdout=out_file,
+                                                stderr=out_file)
+        else:
+            emulator_process = subprocess.Popen(
+                ["emulator", "-avd", avd_name, "-no-snapshot-save", "-no-window", "-no-audio"], stdout=out_file,
+                stderr=out_file)
+        print_with_color(f"Waiting for the emulator to start...", "blue")
+        while True:
+            try:
+                device = get_adb_device_name(avd_name)
+            except:
+                continue
+            if device is not None:
+                break
+
+        print("Device name: ", device)
+        print("AVD name: ", avd_name)
+
+        while True:
+            boot_complete = f"adb -s {device} shell getprop init.svc.bootanim"
+            boot_complete = execute_adb(boot_complete, output=False)
+            if boot_complete == 'stopped':
+                print_with_color("Emulator started successfully", "blue")
+                break
+            time.sleep(1)
+        time.sleep(1)
+        self.emulator_process = emulator_process
+        self.out_file = out_file
+        device_list = list_all_devices()
+        if len(device_list) == 1:
+            device = device_list[0]
+            print_with_color(f"Device selected: {device}", "yellow")
+        else:
+            device = get_avd_serial_number(avd_name)
+        return device
+
+    def stop_single_task(self):
+        print_with_color("Stopping Android Emulator...", "blue")
+        self.emulator_process.terminate()
+
+        while True:
+            try:
+                device = get_adb_device_name(self.config.avd_name)
+                command = f"adb -s {device} reboot -p"
+                ret = execute_adb(command, output=False)
+                self.emulator_process.terminate()
+            except:
+                device = None
+            if device is None:
+                print_with_color("Emulator stopped successfully", "blue")
+                break
+            time.sleep(1)
+        self.out_file.close()
+        if os.path.exists(os.path.join(self.config.avd_log_dir, f'emulator_output_{self.idx}.txt')):
+            os.remove(os.path.join(self.config.avd_log_dir, f'emulator_output_{self.idx}.txt'))
+
+    def __del__(self):
+        if self.tar_avd_dir is not None:
+            shutil.rmtree(self.tar_avd_dir)
+        if self.tar_ini_file is not None:
+            os.remove(self.tar_ini_file)
+        try:
+            self.emulator_process.terminate()
+        except:
+            pass
+        try:
+            self.out_file.close()
+        except:
+            pass
+
+
+class Docker_Instance(Instance):
+    def __init__(self, config, idx = 0):
+        self.idx = idx
+        self.config = config
+        self.container_id = None
+        self.docker_port_local = None
+        self.initialize_worker(config)
+
+    def initialize_worker(self, config):
+        self.config = config
+        print_with_color(f"Starting Android Emulator in docker with AVD name: {config.avd_name}", "blue")
+        docker_port_local = find_free_ports(start_port=6060 + self.idx)
+        self.docker_port_local = docker_port_local
+        print(f"Local port: {docker_port_local}")
+
+
+
+    def initialize_single_task(self,config):
+        docker_image_name = config.docker_args.get("image_name")
+        docker_port = config.docker_args.get("port")
+        container_id = create_docker_container(docker_image_name, docker_port, self.docker_port_local)
+
+        # TODO: python location should be configurable
+        command = "/usr/local/bin/python adb_client.py > server.txt 2>&1"
+        execute_command_in_container(container_id, command)
+        execute_command_in_container(container_id, command)
+        self.container_id = container_id
+        time.sleep(3)
+
+        avd_name = config.avd_name
+        result = start_avd(self.docker_port_local, avd_name)
+        device = result.get("device")
+        print("Device name: ", device)
+        print("AVD name: ", avd_name)
+
+        execute_command_in_container(self.container_id, f"mkdir -p {config.task_dir}")
+        execute_command_in_container(self.container_id, f"mkdir -p {config.trace_dir}")
+        execute_command_in_container(self.container_id, f"mkdir -p {config.screenshot_dir}")
+        execute_command_in_container(self.container_id, f"mkdir -p {config.xml_dir}")
+        time.sleep(10)
+        return device
+
+    def stop_single_task(self):
+        print_with_color("Stopping Android Emulator in docker...", "blue")
+        remove_docker_container(self.container_id)
+        #stop_avd(self.docker_port_local, self.config.avd_name)
+        print_with_color("Emulator stopped successfully", "blue")
+
+    def __del__(self):
+        try:
+            if self.container_id is not None:
+                remove_docker_container(self.container_id)
+        except:
+            pass
+
+
+class AutoTest():
+    def __init__(self, config: TaskConfig) -> None:
+        self.config = config
+
+    def prepare_for_task(self):
+        os.makedirs(self.config.save_dir, exist_ok=True)
+        self.config.task_dir = os.path.join(self.config.save_dir, self.config.task_name)
+        self.config.log_path = os.path.join(self.config.task_dir, f"log_explore_{self.config.task_name}.jsonl")
+        self.config.trace_dir = os.path.join(self.config.task_dir, 'traces')
+        self.config.screenshot_dir = os.path.join(self.config.task_dir, 'Screen')
+        self.config.xml_dir = os.path.join(self.config.task_dir, 'xml')
+        if not os.path.exists(self.config.task_dir):
+            os.mkdir(self.config.task_dir)
+        os.makedirs(self.config.trace_dir, exist_ok=True)
+        os.makedirs(self.config.screenshot_dir, exist_ok=True)
+        os.makedirs(self.config.xml_dir, exist_ok=True)
+
+    def start_emulator(self, instance):
+        if self.config.docker:
+            type = "docker"
+        else:
+            type = "cmd"
+        device = instance.initialize_single_task(self.config)
+
+        self.controller = AndroidController(device, type, instance)
+        self.controller.run_command("adb root")
+        self.controller.run_command("adb emu geo fix -122.156 37.438")
+        if "map.me" not in self.instruction:
+            self.controller.run_command("adb shell date \"2024-05-10 12:00:00\"")
+        #self.controller.run_command("adb install /raid/xuyifan/data/ADBKeyboard.apk")
+        #time.sleep(5)
+        #self.controller.run_command("adb shell ime set com.android.adbkeyboard/.AdbIME")
+
+        if self.config.mode == "in_app":
+            self.controller.launch_app(find_package(self.app))
+            time.sleep(15)
+
+    def run_serial(self, tasks):
+        if self.config.docker:
+            instance = Docker_Instance(self.config)
+        else:
+            instance = Instance(self.config)
+        for task in tasks:
+            self.run_task(task, instance)
+
+    def run_task(self, task_dict, instance):
+        task_id = task_dict['task_id']
+        demo_timestamp = int(time.time())
+        self.config.task_name = task_id + "_" + datetime.datetime.fromtimestamp(demo_timestamp).strftime(
+            "%Y-%m-%d_%H-%M-%S")
+        # print(f"{task_id} running in {instance.container_id}")
+
+        self.instruction = task_dict['task_instruction']
+        self.app = task_dict['app']
+        if not self.config.sample:
+            self.command_per_step = task_dict['command_per_step']
+        else:
+            self.command_per_step = None
+        self.prepare_for_task()
+        self.start_emulator(instance)
+        self.llm_agent = task_dict["agent"]
+
+        print_with_color(self.instruction, "green")
+        round_count = 0
+        task_complete = False
+
+        self.page_executor = self.get_executor()
+
+        self.record = JSONRecorder(id=self.config.task_name, instruction=self.instruction,
+                                   page_executor=self.page_executor,
+                                   config=self.config)
+        task_agent = self.get_agent()
+        while round_count < self.config.max_rounds:
+            try:
+                round_count += 1
+                print_with_color(f"Round {round_count}", "yellow")
+                task_agent.run_step(round_count)
+                print_with_color("Thinking about what to do in the next step...", "yellow")
+                time.sleep(self.config.request_interval)
+
+                if task_agent.page_executor.is_finish:
+                    print_with_color(f"Completed successfully.", "yellow")
+                    task_agent.page_executor.update_screenshot(prefix="end")
+                    task_complete = True
+                    break
+            except Exception as e:
+                import traceback
+                print(traceback.print_exc())
+                print_with_color(f"Error: {e}", "red")
+                break
+
+        instance.stop_single_task()
+        if task_complete:
+            print_with_color(f"Completed successfully. {round_count} rounds generated.", "green")
+        elif round_count == self.config.max_rounds:
+            print_with_color(
+                f"Finished due to reaching max rounds. {round_count} rounds generated.",
+                "yellow")
+        else:
+            print_with_color(f"Finished unexpectedly. {round_count} rounds generated.", "red")
+
+    def get_agent(self):
+        return NotImplementedError
+
+    def get_executor(self):
+        return NotImplementedError
+
+
+SYSTEM_PROMPT_QWEN = '''
+# Agent Instructions
+
+## 1. Core Identity & Mission
+
+You are a professional Android operation agent assistant. Your primary mission is to **successfully** complete the user's instructions, then call the `submit` tool to prove you have finished the task. The evidence you provide to this tool will signal your success.
+
+* **Solvability Principle:** Assume every user request has a valid solution within the app. Your task is not to determine *if* it can be done, but **how** it is done. **Never give up or state that a task is impossible.**
+* **Unwavering Persistence:** You must exhaust all possible options. If you get stuck, re-evaluate the screen, consider alternative interpretations of the user's request, and explore different UI elements. Instead of reporting failure, detail your attempts and pivot to a new strategy.
+* **Focus:** Concentrate on the task at hand.
+* **Language:** Do not translate proper nouns into English.
+
+## 2. Operational Protocol
+
+* **Initial Observation:** **Before you think or act, you must call `get_current_xml` to get the first observation of the screen.**
+* **Interaction Rules:**
+    * Operate only on elements you can see in the current view.
+    * On dropdowns, try typing the option directly first.
+    * When typing text, do not include surrounding quotes (`""`).
+    * Please pay special attention to whether the correct date and time are selected on the current interface when using date-related software.
+    * If an irrelevant notification dialog box appears, please close it immediately to prevent it from interfering with the task.
+* **Exploration Strategy:**
+    * When the path is unclear, explore the app by navigating and tapping elements. Once the path is clear, proceed directly.
+    * If you see a scrollable area and have not found the required content, you must use `swipe` to explore.
+    * **If you are stuck, systematically explore all tappable elements, scroll in every possible direction (up, down, left, right), and reconsider the task's objective from a different perspective.**
+* **Format:** Before each action, you must output a thought process in the format of `## Round X\nAnalysis: ...\n<tool_call>...<tool_call>` where `X` is the round number. This helps to clarify your thought process and actions.
+
+## 3. Finalization: Using the `submit` Tool
+
+* The `submit` tool call is the **absolute final output** of your task. It must be called **exactly once**.
+* Before you call `submit`, your final thought process **must** include a recap to prepare the evidence. An evidence is defined as a tool call ID.
+* You are encouraged to make a few additional tool calls to gather the necessary evidence before calling `submit`, which we call **Creative Verification**.
+* Your `evidences` parameter must contain the 1-3 decisive IDs selected during your recap, based on the **"Creative Verification" principle** (showing the final, visible result).
+
+---
+
+# Toy example 1
+<|im_start|>user
+## Task Instruction:
+Set an alarm for 9:00 a.m. on Monday<|im_end|>
+
+<|im_start|>assistant
+## Round 1
+Analysis: I need to get the current XML to understand the current screen.
+<tool_call>
+{"name": "get_current_xml", "arguments": {}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 2
+Analysis: Now I can open the Clock app. #[863,390][1021,672]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 863, "y1": 390, "x2": 1021, "y2": 672}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 3
+Analysis: In the alarm page, I should tap the "Add Alarm" button to add a new alarm. #[408,1626][672,1890]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 408, "y1": 1626, "x2": 672, "y2": 1890}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 4
+Analysis: I can set the alarm now. Firstly, I should set the alarm to 9 o'clock. #[200,1170][332,1302]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 200, "y1": 1170, "x2": 332, "y2": 1302}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 5
+Analysis: Then I need to change the clock period toggle to "AM". #[782,543][925,807]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 782, "y1": 543, "x2": 925, "y2": 807}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 6
+Analysis: The alarm is now set, tap "OK" to confirm. #[793,1660][969,1792]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 793, "y1": 1660, "x2": 969, "y2": 1792}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 7
+Analysis: Now, this alarm will only go off tomorrow. I need to change it to go off once every Monday. #[209,694][341,826]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 209, "y1": 694, "x2": 341, "y2": 826}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 8
+Analysis: The alarm has been set to go off once every Monday. Now, I'm going to recap the actions and pick the evidences. Based on the "Creative Verification" principle, the evidence will be more clear if I go back to the alarm list page. So I will tap "alarms" to navigate to the alarm list page. #[300,600][350,700]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 300, "y1": 600, "x2": 350, "y2": 700}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+
+<|im_start|>assistant
+## Round 9
+Analysis: Now I can see the alarm I just set. I will use this as the evidence for the successful operation. Task is finished.
+<tool_call>
+{"name": "submit", "arguments": {"message": "The alarm has been set to go off at 9:00 a.m. once every Monday", "evidences": [8]}}
+</tool_call><|im_end|>
+---
+
+# Toy example 2
+<|im_start|>user
+## Task Instruction:
+Move the top email in your inbox to the trash bin.
+<|im_end|>
+
+<|im_start|>assistant
+## Round 1
+Analysis: My task is to move the top email to the trash bin. First, I need to get the current screen layout to identify the target email.
+<tool_call>
+{"name": "get_current_xml", "arguments": {}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+<|im_start|>assistant
+## Round 2
+Analysis: I have identified the top email. I will perform a long press on it to enter selection mode and reveal the contextual actions. #[84,290][1000,480]#
+<tool_call>
+{"name": "long_press", "arguments": {"x1": 84, "y1": 290, "x2": 1000, "y2": 480}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+<|im_start|>assistant
+## Round 3
+Analysis: The email is now selected, and a new action bar has appeared at the top of the screen. I will tap the trash can icon to move the email to the bin. #[900,140][1030,240]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 900, "y1": 140, "x2": 1030, "y2": 240}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+<|im_start|>assistant
+## Round 4
+Analysis: The email has been removed from the inbox. As per my core instructions, I need clear evidence of success. To perform **Creative Verification**, I will now navigate to the trash bin to confirm the email is there. I will start by tapping the main menu icon. #[48,138][150,246]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 48, "y1": 138, "x2": 150, "y2": 246}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+<|im_start|>assistant
+## Round 5
+Analysis: The navigation menu is open. I will tap on the "Trash" folder to view its contents, which will serve as the definitive proof of my action. #[50,1100][800,1200]#
+<tool_call>
+{"name": "tap", "arguments": {"x1": 50, "y1": 1100, "x2": 800, "y2": 1200}}
+</tool_call><|im_end|>
+
+<|im_start|>user
+<tool_response>
+** XML **
+</tool_response><|im_end|>
+
+<|im_start|>assistant
+## Round 6
+Analysis: I am now on the "Trash" screen, and the email I moved is clearly visible. This serves as perfect evidence that the task was completed correctly. I am ready to submit.
+<tool_call>
+{"name": "submit", "arguments": {"message": "The top email from the inbox has been successfully moved to the trash bin.", "evidences": [5]}}
+</tool_call><|im_end|>
+---
+'''
+
+class QwenMultiTurn_AutoTest(AutoTest):
+    
+    def run_task(self, task_dict, instance):
+        task_id = task_dict['task_id']
+        demo_timestamp = int(time.time())
+        self.config.task_name = task_id + "_" + datetime.datetime.fromtimestamp(demo_timestamp).strftime(
+            "%Y-%m-%d_%H-%M-%S")
+        # print(f"{task_id} running in {instance.container_id}")
+
+        self.instruction = task_dict['task_instruction']
+        self.app = task_dict['app']
+        if not self.config.sample:
+            self.command_per_step = task_dict['command_per_step']
+        else:
+            self.command_per_step = None
+        self.prepare_for_task()
+        self.start_emulator(instance)
+        self.llm_agent = task_dict["agent"]
+
+        print_with_color(self.instruction, "green")
+        round_count = 0
+        task_complete = False
+
+        self.page_executor = self.get_executor()
+
+        self.record = JSONRecorder(id=self.config.task_name, instruction=self.instruction,
+                                   page_executor=self.page_executor,
+                                   config=self.config)
+        #! --- 以上代码可以不变 --- !#
+        # if "map.me" in self.instruction or "pimusic" in self.instruction:
+        if ("map.me" in str(self.instruction).lower()) or ("maps.me" in str(self.instruction).lower()) or ("pimusic" in str(self.instruction).lower()):
+            accessibility = self.controller.check_ac_survive()
+        else:
+            accessibility = False
+        # task_agent = self.get_agent()#! 使用 qwen3 multi-turn agent 模式
+        llm_cfg = {
+            # 'model': 'qwen3-235b-a22b',
+            'model': 'qwen3-32b', 
+            # 'model': 'qwen3-8b',
+            'model_type': 'qwen_dashscope',
+            'generate_cfg': {
+                'extra_body': {
+                    'enable_thinking': True
+                },
+            },
+        }
+        tool_init_args = [self.page_executor, self.controller, self.record, accessibility]
+        tools = [
+            GetCurrentXML(*tool_init_args),
+            Tap(*tool_init_args),
+            Type(*tool_init_args),
+            Swipe(*tool_init_args),
+            LongPress(*tool_init_args),
+            Back(*tool_init_args),
+            Home(*tool_init_args),
+            Wait(*tool_init_args),
+            Enter(*tool_init_args),
+            Launch(*tool_init_args),
+            Submit(*tool_init_args),
+        ]
+        task_agent = Assistant(
+            llm=llm_cfg,
+            function_list=tools,
+            name='Qwen3 Agent',
+            description="You are a professional android operation agent assistant that can fulfill user's high-level instructions."
+        )
+        
+        messages = [{
+            "role": "user",
+            "content": SYSTEM_PROMPT_QWEN + f"\n\n# Task Instruction:\n{self.instruction}"
+        }]
+
+        try:
+            response_plain_text = ''
+            for response in task_agent.run(messages=messages):
+                response_plain_text = typewriter_print(response, response_plain_text)
+            
+            if self.page_executor.is_finish:
+                print_with_color(f"Completed successfully.", "yellow")
+                self.page_executor.update_screenshot(prefix="end")
+                self.page_executor.compose_GIF(self.instruction)
+                task_complete = True
+        except Exception as e:
+            import traceback
+            print(traceback.print_exc())
+            print_with_color(f"Error: {e}", "red")
+        
+        save_messages = messages + response
+        with open(os.path.join(self.config.task_dir, f"conversation_{self.config.task_name}.jsonl"), 'w', encoding='utf-8') as f:
+            for message in save_messages:
+                f.write(json.dumps(message, ensure_ascii=False) + '\n')
+        
+        instance.stop_single_task()
+        if task_complete:
+            print_with_color(f"Completed successfully. {round_count} rounds generated.", "green")
+        elif round_count == self.config.max_rounds:
+            print_with_color(
+                f"Finished due to reaching max rounds. {round_count} rounds generated.",
+                "yellow")
+        else:
+            print_with_color(f"Finished unexpectedly. {round_count} rounds generated.", "red")
+
+    def get_executor(self):
+        return TextOnlyExecutor(self.controller, self.config)
+
+class TextOnlyMobileTask_AutoTest(AutoTest):
+    def get_agent(self):
+        task_agent = TextOnlyTask(self.instruction, self.controller, self.page_executor, self.llm_agent, self.record,
+                                  self.command_per_step)
+        return task_agent
+
+    def get_executor(self):
+        return TextOnlyExecutor(self.controller, self.config)
+
+
+class ScreenshotMobileTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = ScreenshotTask(self.instruction, self.controller, self.page_executor, self.llm_agent, self.record,
+                                    self.command_per_step)
+        return task_agent
+
+    def get_executor(self):
+        return VisionExecutor(self.controller, self.config)
+
+
+class ScreenshotMobileTask_AutoTest_for_show(ScreenshotMobileTask_AutoTest):
+    def start_emulator_cmd(self, avd_name):
+        print_with_color(f"Starting Android Emulator with AVD name: {avd_name}", "blue")
+        while True:
+            try:
+                device = get_adb_device_name(avd_name)
+            except:
+                continue
+            if device is not None:
+                break
+        # TODO: fix open emulator bug here
+        print("Device name: ", device)
+        print("AVD name: ", avd_name)
+
+
+        self.emulator_process = None
+        self.out_file = None
+        device_list = list_all_devices()
+        if len(device_list) == 1:
+            device = device_list[0]
+            print_with_color(f"Device selected: {device}", "yellow")
+        else:
+            device = get_avd_serial_number(avd_name)
+        return device
+
+    def stop_emulator(self, instance):
+        print_with_color("Skip Stopping Android Emulator...", "blue")
+
+
+class CogAgentTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = CogAgentTask(self.instruction, self.controller, self.page_executor, self.llm_agent, self.record,
+                                  self.command_per_step)
+        return task_agent
+
+    def get_executor(self):
+        return VisionExecutor(self.controller, self.config)
+
+
+class ScreenSeeActTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = ScreenSeeActTask(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                      self.record, self.command_per_step)
+        return task_agent
+
+
+class ScreenReactTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = ScreenshotReactTask(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                         self.record, self.command_per_step)
+        return task_agent
+
+    def get_executor(self):
+        return VisionExecutor(self.controller, self.config)
+
+class TextOnlySeeActTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = TextOnlySeeActTask(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                      self.record, self.command_per_step)
+        return task_agent
+    
+class TextOnlyReactTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = TextOnlyReactTask(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                       self.record, self.command_per_step)
+        return task_agent
+
+
+class TextOnlyFineTuneTask_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = TextOnlyFineTuneTask(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                          self.record, self.command_per_step)
+        return task_agent
+
+
+class TextOnlyFineTuneTask_long_AutoTest(TextOnlyMobileTask_AutoTest):
+    def get_agent(self):
+        task_agent = TextOnlyFineTuneTask_long(self.instruction, self.controller, self.page_executor, self.llm_agent,
+                                               self.record, self.command_per_step)
+        return task_agent

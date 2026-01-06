@@ -1,0 +1,455 @@
+APP: calendar
+package: com.skuld.calendario
+tasks:
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a repeating event for my weekly yoga class.
+  task_id: calendar_0
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Add a countdown event named "essay" on May 12th.
+  task_id: calendar_1
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Add a 3:00 p.m. event this afternoon.
+  task_id: calendar_2
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Make my dentist appointment to next Monday.
+  task_id: calendar_3
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Show all my events for next month.
+  task_id: calendar_4
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a meeting with my boss today and Add a location of New York.
+  task_id: calendar_5
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Add a reminder for my friend's birthday on May 30th.
+  task_id: calendar_6
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Add a meeting event scheduled for Tuesday.
+  task_id: calendar_7
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan a "weekly Meal Prep Session" every Sunday at 4 PM, featuring checklist
+    of new recipes to try in the event description.
+  task_id: calendar_8
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a "Daily Morning Routine" to begin at 7 AM and repeat daily, including
+    tasks such as "meditation," "exercise," "breakfast," and "review schedule."
+  task_id: calendar_9
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an event called "Book Club" on the first Thursday of next month at
+    7 PM, and set a reminder for one day before.
+  task_id: calendar_10
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Book a "Weekend Getaway" starting on the first day of June at 3 PM, repeating
+    annually with a notification one day ahead to make travel arrangements.
+  task_id: calendar_11
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a "Weekly Meal Prep" event every Sunday at 10 AM, with a reminder on
+    Saturday to finalize the grocery list.
+  task_id: calendar_12
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a recurring monthly bill payment reminder named “Rent Due”.
+  task_id: calendar_13
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange the recurring event “Rent Due” on the 5th day of each month to include the notes “Transfer via bank app”.
+  task_id: calendar_14
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange "Family Game Night" for the first day of every month at 8 PM, with
+    an alert the day before to confirm who will be attending.
+  task_id: calendar_15
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a "Fitness Challenge" starting May 1st at 6 AM, recurring daily with
+    a motivational quote included in the notes section.
+  task_id: calendar_16
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set up a "Water Plants" reminder for every Wednesday at 5 PM, with the note
+    to check soil moisture levels before watering.
+  task_id: calendar_17
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Establish an annual "Car Service Check" on April 22nd at 9 AM with a reminder
+    one day in advance.
+  task_id: calendar_18
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a “Dentist Clean-up” appointment on September 4th at 10 AM and set
+    it to repeated annually.
+  task_id: calendar_19
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a "Family Reunion" event for July 20th at 2 PM, create a recurring
+    event every years.
+  task_id: calendar_20
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a "Family Game Night" event for every Saturday at 6 PM, with alternating
+    board game suggestions in the notes.
+  task_id: calendar_21
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Implement a "Weekly Meal Planning" session every Sunday at 10 AM, with a routine
+    reminder the day before to inventory kitchen supplies.
+  task_id: calendar_22
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a monthly "Book Club" gathering every the second day of the month at 7:30
+    PM, with a reminder 1 day before to prepare discussion points.
+  task_id: calendar_23
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a "Monthly Budget Review" on the 18-th day of each month at 7 PM,
+    attaching the previous month's expense report for reference.
+  task_id: calendar_24
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan a "Day of Unplugging" where you go tech-free, starting at 8 AM on the
+    15th of every other month, with a 24-hour advance reminder.
+  task_id: calendar_25
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a "Personal Reflection Hour" on the third day of every month at 9
+    PM, with gentle notification reminders starting an hour before.
+  task_id: calendar_26
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a "Pet Vet Checkup" for your pet on the first day of May at 11 AM,
+    repeating every year with a reminder 1 day in advance to confirm the appointment.
+  task_id: calendar_27
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan a "Weekend Hiking Trip" for the first day of September, with details
+    on meeting time and place added 1 day in advance and a checklist in the notes
+    section.
+  task_id: calendar_28
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Add “Parent-Teacher Conference” on November 11th at 4 PM, with a reminder
+    the day before to review child’s progress report.
+  task_id: calendar_29
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a "Weekly Sync-Up" meeting with your project team, recurring every
+    Friday at 2 PM with an automatic email reminder 1 hour prior.
+  task_id: calendar_30
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Configure a "Medication Refill" reminder to occur monthly starting on May
+    5th at 12 PM.
+  task_id: calendar_31
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a “Networking Event” on June 23rd at 7 PM with a note about bringing
+    business cards.
+  task_id: calendar_32
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a "Water Plants" reminder everyday at 5 PM starting today.
+  task_id: calendar_33
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a "Monthly Budget Review" on the 10th day of each month at 8 PM,
+    including a reminder the day before to gather all financial statements and receipts.
+  task_id: calendar_34
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a “Car Maintenance” appointment on June 18th at 9 AM with a reminder
+    1 day before and include a checklist with items “oil change,” “tire rotation,”
+    and “brake inspection.”
+  task_id: calendar_35
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a "Client Presentation" for April 4th at 10 AM and arrange for the calendar
+    to send you a preparation checkpoint reminder 1 day in advance.
+  task_id: calendar_36
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a "Spring Wardrobe Swap" on the 7th day of March annually at 1
+    PM, including a checklist of clothing items to sort through.
+  task_id: calendar_37
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a "Family Reunion Picnic" on the first day of June at 12 PM annually,
+    with a reminder set for 1 day before to confirm attendance and potluck dishes.
+  task_id: calendar_38
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan your child's "Soccer Game" on March 20th at 4:30 PM.
+  task_id: calendar_39
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule "Garden Maintenance" on every Friday of the month at 4 PM, and attach
+    a to-do list in the notes.
+  task_id: calendar_40
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set up a birthday reminder for “Mom’s Birthday” on April 15th including an
+    all-day event and set a reminder 1 day in advance.
+  task_id: calendar_41
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an "Annual Health Checkup" appointment on August 20th at 9 AM, with
+    a reminder to schedule the visit 1 day in advance.
+  task_id: calendar_42
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a "Career Development Webinar" for the first day of each month at 3 PM,
+    with reminders set 1 hour prior.
+  task_id: calendar_43
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set up a “Holiday Itinerary Planning” event on June 5th at 8 PM.
+  task_id: calendar_44
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a dentist appointment on the third Wednesday in June at 2 PM and
+    set a reminder two days in advance.
+  task_id: calendar_45
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a recurring event for a weekly team meeting every Monday at 10 AM.
+  task_id: calendar_46
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan a surprise birthday party for a colleague, the birthday is on June 23rd
+    and setting a reminder to decorate the venue on the event day.
+  task_id: calendar_47
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a weekly progress report meeting for a specific project, ensuring the
+    project leader sends out updates every Friday by 3 PM for review.
+  task_id: calendar_48
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a monthly budget review event on the last Friday of every month to
+    evaluate personal finances, including a reminder a week in advance.
+  task_id: calendar_49
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a weekly team brainstorming session on Mondays at 10:00 AM, ensuring
+    the meeting room is booked and a Zoom link is provided for remote participants.
+  task_id: calendar_50
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an event that set up a monthly project report due on the third Friday
+    of the start of each month, with the description that a week before the due date
+    to compile all necessary data.
+  task_id: calendar_51
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an event that implement a 15-minute morning briefing every Monday at
+    8:45 AM for the next 6 months to align the team on weekly goals.
+  task_id: calendar_52
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an event that  plan a monthly finance meeting with your accountant
+    on the last Friday of every month, and include a note that a checklist of financial
+    documents to prepare beforehand.
+  task_id: calendar_53
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan an anniversary surprise by scheduling a reservation at a fancy restaurant
+    for September 12 at 7 PM and set a reminder to order flowers the day before.
+  task_id: calendar_54
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an annual backup reminder for all digital workspaces, including a checklist
+    for the files to be archived, set for the first workday of August.
+  task_id: calendar_55
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a yearly reminder on October 2nd to review and update your personal and
+    professional goals, with a notification one week in advance.
+  task_id: calendar_56
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a schedule in your calendar for the last Friday of December to reminder
+    you to notify people that you will be on holiday.
+  task_id: calendar_57
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Instituting a Friday afternoon "wind-down" session at 4 PM, where the last
+    hour of the workweek is dedicated to non-work-related activities to foster team
+    bonding. This event should repeat weekly with casual activities rotated monthly.
+  task_id: calendar_58
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a deadline reminder on the 20th of every month to submit your department's
+    expense reports.
+  task_id: calendar_59
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange for an educational webinar series, scheduling monthly sessions throughout
+    the year on various topics with reminders to register sent to potential attendees
+    one weeks before each session.The monthly meeting must be held on the first day
+    of each month
+  task_id: calendar_60
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: My magazine subscription will expire on July 20th this year. Set an event
+    for me to renew my subscription one week before that date.
+  task_id: calendar_61
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a yearly team-building retreat for the first weekend of June.
+  task_id: calendar_62
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a team-building activity for the last Friday of every month at 3
+    PM. Set a reminder for everyone to RSVP two weeks in advance.
+  task_id: calendar_63
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a recurring monthly full data backup reminder for your computer systems,
+    with the alert coming one week in advance to ensure all data is ready to be archived.
+  task_id: calendar_64
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a yearly event on February 14 to make dinner reservations for Valentine's
+    Day, reminding you a week in advance.
+  task_id: calendar_65
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a monthly book club meeting with the team, with the first session
+    starting on the first Tuesday of next month, including a pre-meeting survey to
+    choose the book.
+  task_id: calendar_66
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set a reminder to call mom on the first Sunday of each month.
+  task_id: calendar_67
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Establish a year-end personal reflection and goal-setting day for December
+    31st, and send a reminder one week before.
+  task_id: calendar_68
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan a yearly volunteer day for the company to give back to the community,
+    coordinating with local non-profits and setting the date for the first Saturday
+    in June.
+  task_id: calendar_69
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a monthly budget review appointment on the last Friday of each month,
+    prompting you to reconcile accounts and plan next month's budget, with a link
+    to your finance tracking sheet.
+  task_id: calendar_70
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Organize a quarterly virtual lunch-and-learn session on various industry topics,
+    inviting external experts, and scheduling the event for the last Thursday in the
+    quarter at noon.
+  task_id: calendar_71
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Book a dental appointment for cleaning and check-up, starting six months from
+    today, with reminders one week in advance to confirm the appointment.
+  task_id: calendar_72
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an all-day event which title is "Book a conference room for an team
+    offsite" on May 15th.  The description is including catering arrangements and
+    a pre-event checklist.
+  task_id: calendar_73
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Plan an annual review of all digital subscriptions and services used personally
+    or professionally, scheduled for July 15th.
+  task_id: calendar_74
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a recurring semi-annual offsite meeting for executive leadership,
+    set for the third Thursday in July.
+  task_id: calendar_75
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Invite three colleagues to a project brainstorming session next Thursday at
+    3 PM and ask for their agenda items by Tuesday.
+  task_id: calendar_76
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create an event that remind me to book a conference room for a monthly recurring
+    team meeting, every first Wednesday at 10 AM.
+  task_id: calendar_77
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a reminder for the last day of next month's work anniversary and notify
+    one week before the event.
+  task_id: calendar_78
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set up anniversary reminders to book restaurants and purchase gifts one week
+    before the actual date. The anniversary is May 29th.
+  task_id: calendar_79
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Set up a doctor's appointment for a routine check-up at 10:00 AM on the first
+    Tuesday of next month  in the calendar.
+  task_id: calendar_80
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a monthly budget review on the last day of every month to keep personal
+    finances in check.
+  task_id: calendar_81
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Implement a weekly check-in with a mentor or mentee to discuss progress and
+    challenges, alternating between in-person and virtual meetings.
+  task_id: calendar_82
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Arrange a virtual training webinar for customers on the last Thursday of every
+    month, and remind one week in advance.
+  task_id: calendar_83
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a monthly budget review meeting on the first Friday of every month
+    at 2 PM.
+  task_id: calendar_84
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Create a half-day event, which is scheduling a training session for the new
+    software my team will use, from 9:00 am to 9:00 pm on May 16th. The description
+    includes the time for setup, a break, and Q&A at the end.
+  task_id: calendar_85
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Schedule a weekly team check-in every Wednesday at 9 AM, starting next week.
+  task_id: calendar_86
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Implement a weekly fitness hour for the office staff, every Friday at 3 PM.
+  task_id: calendar_87
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Open the calendar and add new event for grandma's party for August 20th, 2024
+    at 9 AM
+  task_id: calendar_88
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Check my later task on my calendar and then delete it.
+  task_id: calendar_89
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Open the calendar app
+  task_id: calendar_90
+- metric_func: evaluation.tasks.calendar
+  metric_type: operation
+  task: Open the calendar
+  task_id: calendar_91

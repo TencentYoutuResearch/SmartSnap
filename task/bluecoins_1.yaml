@@ -1,0 +1,36 @@
+APP: bluecoins
+package: com.rammigsoftware.bluecoins
+tasks:
+  # query
+  - task_id: bluecoins_1_1
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_2
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_3
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_4
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_5
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_6
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_7
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
+  - task_id: bluecoins_1_8
+    task: Could you tell me how much I spent on May 10, 2024?
+    metric_type: query_detect
+    metric_func: evaluation.tasks.bluecoins
